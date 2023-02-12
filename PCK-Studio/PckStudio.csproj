@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0ACAAEDE-93F5-4B5D-B8D7-A0C43359C0D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PckStudio</RootNamespace>
+    <AssemblyName>PCK-Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\PCK-Studio_Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>PckStudio.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1A350BCC742C98A4A39065C40B7D81A6F94CE8C1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleasePortable|AnyCPU'">
+    <OutputPath>bin\ReleasePortable\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>preview</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="filetransferprotocollib">
+      <HintPath>..\filetransferprotocollib.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\API\PCKCenter\model\PCKCenterJSON.cs" />
+    <Compile Include="Classes\API\PCKCenter\SaveLocalJSON.cs" />
+    <Compile Include="Classes\FileTypes\ARCFile.cs" />
+    <Compile Include="Classes\FileTypes\PCKAudioFile.cs" />
+    <Compile Include="Classes\FileTypes\Bink.cs" />
+    <Compile Include="Classes\FileTypes\COLFile.cs" />
+    <Compile Include="Classes\FileTypes\CSM.cs" />
+    <Compile Include="Classes\FileTypes\GRFFile.cs" />
+    <Compile Include="Classes\IO\ARC\ARCFileWriter.cs" />
+    <Compile Include="Classes\IO\ARC\ARCFileReader.cs" />
+    <Compile Include="Classes\IO\PCK\PCKAudioFileReader.cs" />
+    <Compile Include="Classes\IO\PCK\PCKAudioFileWriter.cs" />
+    <Compile Include="Classes\IO\COL\COLFileReader.cs" />
+    <Compile Include="Classes\IO\COL\COLFileWriter.cs" />
+    <Compile Include="Classes\IO\Sounds\SoundIO.cs" />
+    <Compile Include="Classes\IO\Sounds\Sounds.cs" />
+    <Compile Include="Classes\Models\DefaultModels\Steve64x64Model.cs" />
+    <Compile Include="Classes\Utils\ARC\ARCUtil.cs" />
+    <Compile Include="Classes\Utils\SkinANIM.cs" />
+    <Compile Include="Classes\FileTypes\PCKProperties.cs" />
+    <Compile Include="Classes\FileTypes\PCKFile.cs" />
+    <Compile Include="Classes\IO\GRF\GRFFileReader.cs" />
+    <Compile Include="Classes\IO\GRF\GRFFileWriter.cs" />
+    <Compile Include="Classes\IO\LOC\LOCFileReader.cs" />
+    <Compile Include="Classes\IO\LOC\LOCFileWriter.cs" />
+    <Compile Include="Classes\IO\PCKCollectionsLocal.cs" />
+    <Compile Include="Classes\IO\PCK\PCKFileReader.cs" />
+    <Compile Include="Classes\IO\PCK\PCKFileWriter.cs" />
+    <Compile Include="Classes\IO\StreamDataReader.cs" />
+    <Compile Include="Classes\IO\StreamDataWriter.cs" />
+    <Compile Include="Classes\Models\DefaultModels\Steve64x32Model.cs" />
+    <Compile Include="Classes\Models\DefaultModels\ModelBase.cs" />
+    <Compile Include="Classes\Models\DefaultModels\Texture.cs" />
+    <Compile Include="Classes\Models\DefaultModels\TextureSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Models\Backgrounds.cs" />
+    <Compile Include="Classes\Models\BackgroundTypes.cs" />
+    <Compile Include="Classes\Models\Box.cs" />
+    <Compile Include="Classes\Models\Effects.cs" />
+    <Compile Include="Classes\Models\Matrix3D.cs" />
+    <Compile Include="Classes\Models\ModelView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Models\ModelView.Designer.cs">
+      <DependentUpon>ModelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Models\Object3D.cs" />
+    <Compile Include="Classes\Models\Object3DGroup.cs" />
+    <Compile Include="Classes\Models\Point3D.cs" />
+    <Compile Include="Classes\Models\Positions.cs" />
+    <Compile Include="Classes\Models\ProjectionTypes.cs" />
+    <Compile Include="Classes\Models\RotationOrders.cs" />
+    <Compile Include="Classes\Models\Texel.cs" />
+    <Compile Include="Classes\Models\TexelComparer.cs" />
+    <Compile Include="Classes\Models\TexturePlane.cs" />
+    <Compile Include="Classes\Networking\Network.cs" />
+    <Compile Include="Classes\Networking\PCKCollections.cs" />
+    <Compile Include="Classes\Misc\RichPresenceClient.cs" />
+    <Compile Include="Classes\Networking\Update.cs" />
+    <Compile Include="Classes\Utils\grf\CRC32.cs" />
+    <Compile Include="Classes\Utils\RLE.cs" />
+    <Compile Include="Forms\Additional-Popups\Loc\AddLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Loc\AddLanguage.Designer.cs">
+      <DependentUpon>AddLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\CreateTexturePack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\CreateTexturePack.Designer.cs">
+      <DependentUpon>CreateTexturePack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\MipMapPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\MipMapPrompt.Designer.cs">
+      <DependentUpon>MipMapPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\RenamePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\RenamePrompt.Designer.cs">
+      <DependentUpon>RenamePrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\COLEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\COLEditor.Designer.cs">
+      <DependentUpon>COLEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\LOCEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\LOCEditor.Designer.cs">
+      <DependentUpon>LOCEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\ChangeTile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\ChangeTile.Designer.cs">
+      <DependentUpon>ChangeTile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\SetBulkSpeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\SetBulkSpeed.Designer.cs">
+      <DependentUpon>SetBulkSpeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Audio\creditsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Audio\creditsEditor.Designer.cs">
+      <DependentUpon>creditsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Audio\addCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Audio\addCategory.Designer.cs">
+      <DependentUpon>addCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\addMeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\addMeta.Designer.cs">
+      <DependentUpon>addMeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\addNewSkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\addNewSkin.Designer.cs">
+      <DependentUpon>addNewSkin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddPCKPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddPCKPassword.Designer.cs">
+      <DependentUpon>AddPCKPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\AdvancedOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\AdvancedOptions.Designer.cs">
+      <DependentUpon>AdvancedOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\GRFEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\GRFEditor.Designer.cs">
+      <DependentUpon>GRFEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Grf\AddParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Grf\AddParameter.Designer.cs">
+      <DependentUpon>AddParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Audio\pleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Audio\pleaseWait.Designer.cs">
+      <DependentUpon>pleaseWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\AnimationUtil.cs" />
+    <Compile Include="Forms\Utilities\Skins\ANIMEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\Skins\ANIMEditor.Designer.cs">
+      <DependentUpon>ANIMEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\generateModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\generateModel.Designer.cs">
+      <DependentUpon>generateModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\goodbye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\goodbye.Designer.cs">
+      <DependentUpon>goodbye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\SkinPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\SkinPreview.Designer.cs">
+      <DependentUpon>SkinPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\AnimationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\AnimationEditor.Designer.cs">
+      <DependentUpon>AnimationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\FrameEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\FrameEditor.Designer.cs">
+      <DependentUpon>FrameEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\AudioEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\AudioEditor.Designer.cs">
+      <DependentUpon>AudioEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\installPS3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\installPS3.Designer.cs">
+      <DependentUpon>installPS3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\installVita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\installVita.Designer.cs">
+      <DependentUpon>installVita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\installWiiU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\installWiiU.Designer.cs">
+      <DependentUpon>installWiiU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Job.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Job.Designer.cs">
+      <DependentUpon>Job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Utils\ListUtils.cs" />
+    <Compile Include="Forms\Utilities\PCK Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\PCK Manager.Designer.cs">
+      <DependentUpon>PCK Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\pckCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\pckCenter.Designer.cs">
+      <DependentUpon>pckCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\PckCenterBeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\PckCenterBeta.Designer.cs">
+      <DependentUpon>PckCenterBeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\pckCenterOpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\pckCenterOpen.Designer.cs">
+      <DependentUpon>pckCenterOpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\pckLocked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\pckLocked.Designer.cs">
+      <DependentUpon>pckLocked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\Pref.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\Pref.Designer.cs">
+      <DependentUpon>Pref.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utilities\TextureConverterUtility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utilities\TextureConverterUtility.Designer.cs">
+      <DependentUpon>TextureConverterUtility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ToolboxItems\InterpolationPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\FileTypes\LOCFile.cs" />
+    <Compile Include="Forms\Additional-Popups\meta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\meta.Designer.cs">
+      <DependentUpon>meta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Forms\Additional-Popups\programInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\programInfo.Designer.cs">
+      <DependentUpon>programInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Misc\RenderBase.cs" />
+    <Compile Include="Classes\Texturing\TextureCodec.cs" />
+    <Compile Include="Classes\Texturing\TextureUtils.cs" />
+    <EmbeddedResource Include="Forms\Additional-Popups\Loc\AddLanguage.resx">
+      <DependentUpon>AddLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\CreateTexturePack.resx">
+      <DependentUpon>CreateTexturePack.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\MipMapPrompt.resx">
+      <DependentUpon>MipMapPrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\RenamePrompt.resx">
+      <DependentUpon>RenamePrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\COLEditor.ja.resx">
+      <DependentUpon>COLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\COLEditor.resx">
+      <DependentUpon>COLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\LOCEditor.ja.resx">
+      <DependentUpon>LOCEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\LOCEditor.resx">
+      <DependentUpon>LOCEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Animation\ChangeTile.resx">
+      <DependentUpon>ChangeTile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Animation\SetBulkSpeed.resx">
+      <DependentUpon>SetBulkSpeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Audio\creditsEditor.resx">
+      <DependentUpon>creditsEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Audio\addCategory.resx">
+      <DependentUpon>addCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\addMeta.ja.resx">
+      <DependentUpon>addMeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\addMeta.resx">
+      <DependentUpon>addMeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\addNewSkin.ja.resx">
+      <DependentUpon>addNewSkin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\addNewSkin.resx">
+      <DependentUpon>addNewSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\AddPCKPassword.resx">
+      <DependentUpon>AddPCKPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\AdvancedOptions.ja.resx">
+      <DependentUpon>AdvancedOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\AdvancedOptions.resx">
+      <DependentUpon>AdvancedOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\GRFEditor.resx">
+      <DependentUpon>GRFEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Grf\AddParameter.resx">
+      <DependentUpon>AddParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Audio\pleaseWait.resx">
+      <DependentUpon>pleaseWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\Skins\ANIMEditor.resx">
+      <DependentUpon>ANIMEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ja.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\generateModel.ja.resx">
+      <DependentUpon>generateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\generateModel.resx">
+      <DependentUpon>generateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\goodbye.ja.resx">
+      <DependentUpon>goodbye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\goodbye.resx">
+      <DependentUpon>goodbye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\SkinPreview.resx">
+      <DependentUpon>SkinPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\AnimationEditor.resx">
+      <DependentUpon>AnimationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Animation\FrameEditor.resx">
+      <DependentUpon>FrameEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\AudioEditor.resx">
+      <DependentUpon>AudioEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\installPS3.resx">
+      <DependentUpon>installPS3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\installVita.resx">
+      <DependentUpon>installVita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\installWiiU.ja.resx">
+      <DependentUpon>installWiiU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\installWiiU.resx">
+      <DependentUpon>installWiiU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Job.resx">
+      <DependentUpon>Job.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\meta.ja.resx">
+      <DependentUpon>meta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\PCK Manager.ja.resx">
+      <DependentUpon>PCK Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\PCK Manager.resx">
+      <DependentUpon>PCK Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\pckCenter.ja.resx">
+      <DependentUpon>pckCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\pckCenter.resx">
+      <DependentUpon>pckCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\PckCenterBeta.resx">
+      <DependentUpon>PckCenterBeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\pckCenterOpen.ja.resx">
+      <DependentUpon>pckCenterOpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\pckCenterOpen.resx">
+      <DependentUpon>pckCenterOpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\pckLocked.ja.resx">
+      <DependentUpon>pckLocked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\pckLocked.resx">
+      <DependentUpon>pckLocked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\Pref.ja.resx">
+      <DependentUpon>Pref.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\Pref.resx">
+      <DependentUpon>Pref.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utilities\TextureConverterUtility.resx">
+      <DependentUpon>TextureConverterUtility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\meta.resx">
+      <DependentUpon>meta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\programInfo.resx">
+      <DependentUpon>programInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="CommunityKey.snk" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pckstudiomelonbuild-credits-view.PNG" />
+    <None Include="Resources\pckstudiomelonbuild-view.PNG" />
+    <None Include="Resources\pcklogo.png" />
+    <None Include="Resources\wd-cl101.png" />
+    <None Include="Resources\wd-cl13.png" />
+    <None Include="Resources\wd-cl12.png" />
+    <None Include="Resources\wd-cl10.png" />
+    <None Include="Resources\apps.zip" />
+    <None Include="Resources\binka\binkawin.asi" />
+    <None Include="Resources\tileData.json" />
+    <None Include="Resources\Del.png" />
+    <None Include="Resources\ExportFile.png" />
+    <None Include="Resources\power3.png" />
+    <None Include="Resources\power.png" />
+    <None Include="Resources\youtube_PNG15.png" />
+    <None Include="Resources\pckClosed.png" />
+    <None Include="Resources\pckClosed.bmp" />
+    <None Include="Resources\wii-u-games-tool.png" />
+    <None Include="Resources\turn-off %281%291.png" />
+    <None Include="Resources\bg2.png" />
+    <None Include="Resources\discord.png" />
+    <None Include="Resources\external-content.duckduckgo.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\changeTile.png" />
+    <None Include="Resources\items.png" />
+    <None Include="Resources\MROE.png" />
+    <None Include="Resources\sdDownload.png" />
+    <None Include="Resources\Replace.png" />
+    <None Include="Resources\pack.png" />
+    <None Include="Resources\terrain.png" />
+    <None Include="Resources\xbox.png" />
+    <None Include="Resources\ps3.png" />
+    <None Include="Resources\wiiu.png" />
+    <None Include="Resources\Splash.png" />
+    <None Include="Resources\pckOpen.png" />
+    <None Include="Resources\pckDrop.png" />
+    <None Include="Resources\pckCenterHeader.png" />
+    <None Include="Resources\binka\binka_encode.exe" />
+    <None Include="Resources\binka\mss32.dll" />
+    <None Include="Resources\anim_editor\classic_template.png" />
+    <None Include="Resources\anim_editor\slim_template.png" />
+    <None Include="Resources\iconImageList\COL ICON.png" />
+    <None Include="Resources\iconImageList\SKINS ICON.png" />
+    <None Include="Resources\iconImageList\MODELS ICON.png" />
+    <None Include="Resources\iconImageList\GRF ICON.png" />
+    <None Include="Resources\iconImageList\GRH ICON.png" />
+    <None Include="Resources\iconImageList\ZERO ICON.png" />
+    <None Include="Resources\iconImageList\INFO ICON.png" />
+    <None Include="Resources\iconImageList\CAPE ICON.png" />
+    <None Include="Resources\iconImageList\SKIN ICON.png" />
+    <None Include="Resources\iconImageList\TEXTURE ICON.png" />
+    <None Include="Resources\iconImageList\SKINS ICON_new.png" />
+    <None Include="Resources\MainSelection1.png" />
+    <None Include="Resources\menucontexbar.png" />
+    <None Include="Resources\btn.png" />
+    <None Include="Resources\btn1.png" />
+    <None Include="Resources\btn11.png" />
+    <None Include="Resources\btn12.png" />
+    <None Include="Resources\patch.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Maximize.png" />
+    <None Include="Resources\Minimize.png" />
+    <None Include="Resources\Maximize1.png" />
+    <None Include="Resources\melon Foxx logo.png" />
+    <None Include="Resources\melon Foxx logo1.png" />
+    <Content Include="Resources\PCK-Studio_Logo.ico" />
+    <None Include="Resources\bg1.png" />
+    <Content Include="Resources\NoImageFound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody">
+      <Version>5.8.0-alpha0098</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="DiscordRichPresence">
+      <Version>1.0.175</Version>
+    </PackageReference>
+    <PackageReference Include="MetroFramework">
+      <Version>1.2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="MetroFramework.Design">
+      <Version>1.2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="MetroFramework.RunTime">
+      <Version>1.2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="MetroModernUI">
+      <Version>1.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SharpZipLib">
+      <Version>1.3.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
