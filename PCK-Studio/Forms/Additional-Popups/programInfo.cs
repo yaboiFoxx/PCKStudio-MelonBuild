@@ -81,7 +81,7 @@ namespace PckStudio
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/yaboiFoxx");
+            Process.Start("https://github.com/yaboiFoxx/PCKStudio-MelonBuild/releases");
         }
     }
 }
