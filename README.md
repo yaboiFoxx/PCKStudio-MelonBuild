@@ -5,7 +5,7 @@ Melon Build: A Revamp of PCK Studio!
 This is a revamp of PCK Studio! With a whole new UI and much more new features, you can make .pck files in a much cooler fashon! 
 
 ## Build Creators:
-* [yaboiFoxx](https://github.com/yaboiFoxx) for Improved UI concept
+* [yaboiFoxx](https://github.com/yaboiFoxx) Main Developer of the build
 
 ## Original Creators:
 *  [PhoenixARC](https://github.com/PhoenixARC)
