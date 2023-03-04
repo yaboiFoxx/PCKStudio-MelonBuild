@@ -1193,99 +1193,14 @@ namespace PckStudio
         //Exports model (int)doubleo reusable project file
         private void buttonExportModel_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Custom Skin Model File | *.CSM";
-            if (saveFileDialog.ShowDialog() != DialogResult.OK)
-                return;
-            string contents = "";
-            foreach (ListViewItem listViewItem in listViewBoxes.Items)
-            {
-                string str = "";
-                foreach (ListViewItem.ListViewSubItem subItem in listViewItem.SubItems)
-                {
-                    if (subItem.Text != "unchecked")
-                        str = str + subItem.Text + Environment.NewLine;
-                }
-                contents += (listViewItem.Text + Environment.NewLine + listViewItem.Tag) + Environment.NewLine + str;
-            }
-
-            File.WriteAllText(saveFileDialog.FileName, contents);
+           
         }
 
 
         //Imports model from reusable project file
         private void buttonImportModel_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Custom Skin Model File | *.CSM";
-            openFileDialog.Title = "Select Custom Skin Model File";
-            if (MessageBox.Show("Import custom model project file? Your current work will be lost!", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes && openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                listViewBoxes.Items.Clear();
-                string str1 = File.ReadAllText(openFileDialog.FileName);
-                int x = 0;
-                foreach (string str2 in str1.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
-                    ++x;
-                int y = x / 11;
-                ListView listView = new ListView();
-                int num3 = 0;
-                do
-                {
-                    listView.Items.Add("BOX");
-                    ++num3;
-                }
-                while (num3 < y);
-                IEnumerator enumerator = listView.Items.GetEnumerator();
-                try
-                {
-                label_33:
-                    if (enumerator.MoveNext())
-                    {
-                        ListViewItem current = (ListViewItem)enumerator.Current;
-                        ListViewItem listViewItem = new ListViewItem();
-                        int num4 = 0;
-                        do
-                        {
-                            foreach (string text in str1.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
-                            {
-                                ++num4;
-                                if (num4 == 1 + 11 * current.Index)
-                                    listViewItem.Text = text;
-                                else if (num4 == 2 + 11 * current.Index)
-                                    listViewItem.Tag = text;
-                                else if (num4 == 4 + 11 * current.Index)
-                                    listViewItem.SubItems.Add(text);
-                                else if (num4 == 5 + 11 * current.Index)
-                                    listViewItem.SubItems.Add(text);
-                                else if (num4 == 6 + 11 * current.Index)
-                                    listViewItem.SubItems.Add(text);
-                                else if (num4 == 7 + 11 * current.Index)
-                                    listViewItem.SubItems.Add(text);
-                                else if (num4 == 8 + 11 * current.Index)
-                                    listViewItem.SubItems.Add(text);
-                                else if (num4 == 9 + 11 * current.Index)
-                                    listViewItem.SubItems.Add(text);
-                                else if (num4 == 10 + 11 * current.Index)
-                                    listViewItem.SubItems.Add(text);
-                                else if (num4 == 11 + 11 * current.Index)
-                                {
-                                    listViewItem.SubItems.Add(text);
-                                    listViewBoxes.Items.Add(listViewItem);
-                                }
-                            }
-                        }
-                        while (num4 < x);
-                        goto label_33;
-                    }
-                }
-                finally
-                {
-                    IDisposable disposable = enumerator as IDisposable;
-                    if (disposable != null)
-                        disposable.Dispose();
-                }
-            }
-            render();
+            
         }
 
         //Clones Item
@@ -1432,6 +1347,143 @@ namespace PckStudio
 
         private void OpenJSONButton_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        public string JSONToCSM(string InputFilePath)
+        {
+            dynamic jsonDe = JsonConvert.DeserializeObject<CSMJObject>(File.ReadAllText(InputFilePath));
+            string CSMData = "";
+            foreach (CSMJObjectGroup group in jsonDe.groups)
+            {
+                string PARENT = group.name;
+                foreach (int i in group.children)
+                {
+                    string name = jsonDe.elements[i].name;
+                    float PosX = jsonDe.elements[i].from[0] + group.origin[0];
+                    float PosY = jsonDe.elements[i].from[1] + group.origin[1];
+                    float PosZ = jsonDe.elements[i].from[2] + group.origin[2];
+                    float SizeX = jsonDe.elements[i].to[0] - jsonDe.elements[i].from[0];
+                    float SizeY = jsonDe.elements[i].to[1] - jsonDe.elements[i].from[1];
+                    float SizeZ = jsonDe.elements[i].to[2] - jsonDe.elements[i].from[2];
+                    float U = 0;
+                    float V = 0;
+
+                    CSMData += name + "\n" + PARENT + "\n" + name + "\n" + PosX + "\n" + PosY + "\n" + PosZ + "\n" + SizeX + "\n" + SizeY + "\n" + SizeZ + "\n" + U + "\n" + V + "\n";
+                }
+            }
+            return CSMData;
+        }
+
+        private void displayBox_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Drag panel
+        bool mousedown;
+        private Point offset;
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mousedown = true;
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mousedown = false;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mousedown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void openCSMToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Custom Skin Model File | *.CSM";
+            openFileDialog.Title = "Select Custom Skin Model File";
+            if (MessageBox.Show("Import custom model project file? Your current work will be lost!", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes && openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                listViewBoxes.Items.Clear();
+                string str1 = File.ReadAllText(openFileDialog.FileName);
+                int x = 0;
+                foreach (string str2 in str1.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
+                    ++x;
+                int y = x / 11;
+                ListView listView = new ListView();
+                int num3 = 0;
+                do
+                {
+                    listView.Items.Add("BOX");
+                    ++num3;
+                }
+                while (num3 < y);
+                IEnumerator enumerator = listView.Items.GetEnumerator();
+                try
+                {
+                label_33:
+                    if (enumerator.MoveNext())
+                    {
+                        ListViewItem current = (ListViewItem)enumerator.Current;
+                        ListViewItem listViewItem = new ListViewItem();
+                        int num4 = 0;
+                        do
+                        {
+                            foreach (string text in str1.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
+                            {
+                                ++num4;
+                                if (num4 == 1 + 11 * current.Index)
+                                    listViewItem.Text = text;
+                                else if (num4 == 2 + 11 * current.Index)
+                                    listViewItem.Tag = text;
+                                else if (num4 == 4 + 11 * current.Index)
+                                    listViewItem.SubItems.Add(text);
+                                else if (num4 == 5 + 11 * current.Index)
+                                    listViewItem.SubItems.Add(text);
+                                else if (num4 == 6 + 11 * current.Index)
+                                    listViewItem.SubItems.Add(text);
+                                else if (num4 == 7 + 11 * current.Index)
+                                    listViewItem.SubItems.Add(text);
+                                else if (num4 == 8 + 11 * current.Index)
+                                    listViewItem.SubItems.Add(text);
+                                else if (num4 == 9 + 11 * current.Index)
+                                    listViewItem.SubItems.Add(text);
+                                else if (num4 == 10 + 11 * current.Index)
+                                    listViewItem.SubItems.Add(text);
+                                else if (num4 == 11 + 11 * current.Index)
+                                {
+                                    listViewItem.SubItems.Add(text);
+                                    listViewBoxes.Items.Add(listViewItem);
+                                }
+                            }
+                        }
+                        while (num4 < x);
+                        goto label_33;
+                    }
+                }
+                finally
+                {
+                    IDisposable disposable = enumerator as IDisposable;
+                    if (disposable != null)
+                        disposable.Dispose();
+                }
+            }
+            render();
+        }
+
+        private void openJSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "JSON Model File | *.JSON";
             openFileDialog.Title = "Select JSON Model File";
@@ -1504,62 +1556,25 @@ namespace PckStudio
             render();
         }
 
-        public string JSONToCSM(string InputFilePath)
+        private void eXPORTCSMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dynamic jsonDe = JsonConvert.DeserializeObject<CSMJObject>(File.ReadAllText(InputFilePath));
-            string CSMData = "";
-            foreach (CSMJObjectGroup group in jsonDe.groups)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Custom Skin Model File | *.CSM";
+            if (saveFileDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string contents = "";
+            foreach (ListViewItem listViewItem in listViewBoxes.Items)
             {
-                string PARENT = group.name;
-                foreach (int i in group.children)
+                string str = "";
+                foreach (ListViewItem.ListViewSubItem subItem in listViewItem.SubItems)
                 {
-                    string name = jsonDe.elements[i].name;
-                    float PosX = jsonDe.elements[i].from[0] + group.origin[0];
-                    float PosY = jsonDe.elements[i].from[1] + group.origin[1];
-                    float PosZ = jsonDe.elements[i].from[2] + group.origin[2];
-                    float SizeX = jsonDe.elements[i].to[0] - jsonDe.elements[i].from[0];
-                    float SizeY = jsonDe.elements[i].to[1] - jsonDe.elements[i].from[1];
-                    float SizeZ = jsonDe.elements[i].to[2] - jsonDe.elements[i].from[2];
-                    float U = 0;
-                    float V = 0;
-
-                    CSMData += name + "\n" + PARENT + "\n" + name + "\n" + PosX + "\n" + PosY + "\n" + PosZ + "\n" + SizeX + "\n" + SizeY + "\n" + SizeZ + "\n" + U + "\n" + V + "\n";
+                    if (subItem.Text != "unchecked")
+                        str = str + subItem.Text + Environment.NewLine;
                 }
+                contents += (listViewItem.Text + Environment.NewLine + listViewItem.Tag) + Environment.NewLine + str;
             }
-            return CSMData;
-        }
 
-        private void displayBox_Click(object sender, EventArgs e)
-        {
-
-        }
-        // Drag panel
-        bool mousedown;
-        private Point offset;
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            offset.X = e.X;
-            offset.Y = e.Y;
-            mousedown = true;
-        }
-
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
-        {
-            mousedown = false;
-        }
-
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mousedown == true)
-            {
-                Point currentScreenPos = PointToScreen(e.Location);
-                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            File.WriteAllText(saveFileDialog.FileName, contents);
         }
     }
 

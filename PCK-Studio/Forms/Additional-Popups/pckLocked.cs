@@ -13,6 +13,8 @@ namespace PckStudio.Forms
 {
     public partial class pckLocked : MetroFramework.Forms.MetroForm
     {
+        bool mousedown;
+        private Point offset;
         string pass;
 
         public pckLocked(string pass)
@@ -61,6 +63,35 @@ namespace PckStudio.Forms
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mousedown = true;
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mousedown = false;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mousedown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
     }
 }

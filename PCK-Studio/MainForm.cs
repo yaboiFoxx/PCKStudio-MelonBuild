@@ -23,6 +23,10 @@ using System.Web.Configuration;
 using System.Windows.Media;
 using System.Runtime.ConstrainedExecution;
 using System.Windows.Documents;
+using static PckStudio.Classes.FileTypes.PCKFile;
+using System.Security.Cryptography;
+using System.Windows.Forms.Design;
+using System.Windows.Controls;
 
 namespace PckStudio
 {
@@ -56,11 +60,8 @@ namespace PckStudio
 			imageList.Images.Add(Resources.TEXTURE_ICON); // Icon for Texture files (*.png;*.tga)
 			pckOpen.AllowDrop = true;
 			tabControl.SelectTab(0);
-			labelVersion.Text = "PCK Studio: " + Application.ProductVersion;
 			ChangelogRichTextBox.Text = Resources.CHANGELOG;
-#if DEBUG
-			labelVersion.Text += " (Debug build)";
-#endif
+
 
 			pckFileTypeHandler = new Dictionary<PCKFile.FileData.FileType, Action<PCKFile.FileData>>(15)
 			{
@@ -128,11 +129,12 @@ namespace PckStudio
 			RPC.Deinitialize();
 		}
 
+
 		private void openToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			using (var ofd = new OpenFileDialog())
+            using (var ofd = new OpenFileDialog())
 			{
-				ofd.CheckFileExists = true;
+                ofd.CheckFileExists = true;
 				ofd.Filter = "PCK (Minecraft Console Package)|*.pck";
 				if (ofd.ShowDialog() == DialogResult.OK)
 				{
@@ -143,7 +145,7 @@ namespace PckStudio
 
 		private PCKFile openPck(string filePath)
 		{
-			PCKFile pck = null;
+            PCKFile pck = null;
 			using (var fileStream = File.OpenRead(filePath))
 			{
 				isTemplateFile = false;
@@ -151,7 +153,8 @@ namespace PckStudio
 				try
 				{
 					pck = PCKFileReader.Read(fileStream, LittleEndianCheckBox.Checked);
-				}
+                    pckname.Text = Path.GetFileName(filePath);
+                }
 				catch (OverflowException ex)
 				{
 					MessageBox.Show("Failed to open pck\n" +
@@ -358,7 +361,7 @@ namespace PckStudio
 			{
 				using (var ms = new MemoryStream(file.data))
 				{
-					var texture = Image.FromStream(ms);
+					var texture = System.Drawing.Image.FromStream(ms);
 					SkinPreview frm = new SkinPreview(texture);
 					frm.ShowDialog(this);
 					frm.Dispose();
@@ -403,7 +406,7 @@ namespace PckStudio
 					if (Path.GetExtension(file.filepath) == ".tga") break;
 					using (MemoryStream png = new MemoryStream(file.data))
 					{
-						Image skinPicture = Image.FromStream(png);
+						System.Drawing.Image skinPicture =System.Drawing.Image.FromStream(png);
 						pictureBoxImagePreview.Image = skinPicture;
 						labelImageSize.Text = $"{skinPicture.Size.Width}x{skinPicture.Size.Height}";
 					}
@@ -654,7 +657,7 @@ namespace PckStudio
 					using ChangeTile diag = new ChangeTile();
 					if (diag.ShowDialog(this) == DialogResult.OK)
 					{
-						using Image img = new Bitmap(ofd.FileName);
+						using System.Drawing.Image img = new Bitmap(ofd.FileName);
 						var file = AnimationUtil.CreateNewAnimationFile(img, diag.SelectedTile, diag.IsItem);
 						using AnimationEditor animationEditor = new AnimationEditor(file);
 						if (animationEditor.ShowDialog() == DialogResult.OK)
@@ -2319,7 +2322,7 @@ namespace PckStudio
 		}
 
 
-		public static Bitmap ResizeImage(Image image, int width, int height)
+		public static Bitmap ResizeImage(System.Drawing.Image image, int width, int height)
 		{
 			var destRect = new Rectangle(0, 0, width, height);
 			var destImage = new Bitmap(width, height);
@@ -2444,7 +2447,7 @@ namespace PckStudio
 					BinaryWriter output = new BinaryWriter(data);
 
 					MemoryStream png = new MemoryStream(((PCKFile.FileData)(treeViewMain.SelectedNode.Tag)).data); //Gets image data from minefile data
-					Image skinPicture = Image.FromStream(png); //Constructs image data into image
+					System.Drawing.Image skinPicture = System.Drawing.Image.FromStream(png); //Constructs image data into image
 					pictureBoxImagePreview.Image = skinPicture; //Sets image preview to image
 
 					byte[] buffer = new byte[skinPicture.Width * skinPicture.Height * 4];
@@ -2887,13 +2890,13 @@ namespace PckStudio
 							currentPCK.Files.Remove(currentPCK.GetFile(mippedPath, PCKFile.FileData.FileType.TextureFile));
 						PCKFile.FileData MipMappedFile = new PCKFile.FileData(mippedPath, PCKFile.FileData.FileType.TextureFile);
 
-						Image originalTexture = Bitmap.FromStream(new MemoryStream(file.data));
+						System.Drawing.Image originalTexture = Bitmap.FromStream(new MemoryStream(file.data));
 						int NewWidth = originalTexture.Width / (int)Math.Pow(2,i - 1);
 						int NewHeight = originalTexture.Height / (int)Math.Pow(2, i - 1);
 						Rectangle tileArea = new Rectangle(0, 0,
 							NewWidth < 1 ? 1 : NewWidth, 
 							NewHeight < 1 ? 1 : NewHeight);
-						Image mippedTexture = new Bitmap(NewWidth, NewHeight);
+						System.Drawing.Image mippedTexture = new Bitmap(NewWidth, NewHeight);
 						using (Graphics gfx = Graphics.FromImage(mippedTexture))
 						{
 							gfx.SmoothingMode = SmoothingMode.None;
@@ -2911,7 +2914,7 @@ namespace PckStudio
 				}
 			}
 		}
-
+		//GOOFY AHH CODE THAT IS NOT SUPPOSED TO BE HERE!!!
 		private void closebtn_Click(object sender, EventArgs e)
 		{
 			this.Close();
@@ -2931,13 +2934,14 @@ namespace PckStudio
 		{
 			
 		}
-
-		private void label5_Click(object sender, EventArgs e)
+        
+        private void label5_Click(object sender, EventArgs e)
 		{
 
 		}
-       
-		// Drag panel
+        //End GOOFY AHH CODE THAT IS NOT SUPPOSED TO BE HERE!!!
+
+        // Drag panel
         bool mousedown;
         private Point offset;
        
@@ -2966,7 +2970,7 @@ namespace PckStudio
         {
 
         }
-
+		//Close, Minimize, and Maximize Buttons
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             button1.BackColor = System.Drawing.Color.Firebrick;
@@ -2987,12 +2991,12 @@ namespace PckStudio
 			if (WindowState == FormWindowState.Normal)
 			{
 				WindowState = FormWindowState.Maximized;
-                button2.BackgroundImage = Image.FromFile(@"D:\wiiu storage\wiiu programs\wiiu program projects\official\Pck Studio Melon Build(BETA UI VER)\PCK-Studio\Resources\Maximize.png");
+                button2.BackgroundImage = Resources.Maximize;
             }
 			else
 			{
 				WindowState = FormWindowState.Normal;
-                button2.BackgroundImage = Image.FromFile(@"D:\wiiu storage\wiiu programs\wiiu program projects\official\Pck Studio Melon Build(BETA UI VER)\PCK-Studio\Resources\Maximize1.png");
+                button2.BackgroundImage = Resources.Maximize1;
 
             }
             
@@ -3002,12 +3006,14 @@ namespace PckStudio
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        //End Drag Panel
+		// Random ahh code that I cant delete 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
             
         }
-
+        // End Random ahh code that I cant delete
+        //Window Draging code
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -3015,6 +3021,7 @@ namespace PckStudio
             mousedown = true;
         }
 
+		
         private void panel1_MouseMove_1(object sender, MouseEventArgs e)
         {
             if (mousedown == true)
@@ -3028,25 +3035,66 @@ namespace PckStudio
         {
             mousedown = false;
         }
-
+        //Minimize and Normal Window State 
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
-                button2.BackgroundImage = Image.FromFile(@"D:\wiiu storage\wiiu programs\wiiu program projects\official\Pck Studio Melon Build(BETA UI VER)\PCK-Studio\Resources\Maximize.png");
+                button2.BackgroundImage = Resources.Maximize;
             }
             else
             {
                 WindowState = FormWindowState.Normal;
-                button2.BackgroundImage = Image.FromFile(@"D:\wiiu storage\wiiu programs\wiiu program projects\official\Pck Studio Melon Build(BETA UI VER)\PCK-Studio\Resources\Maximize1.png");
+                button2.BackgroundImage = Resources.Maximize1;
 
             }
         }
-
-		private void button2_BackColorChanged(object sender, EventArgs e)
+        //End Window Draging code
+		//More no needed code but cant delete
+        private void button2_BackColorChanged(object sender, EventArgs e)
 		{
 			
         }
+
+        private void button4_MouseHover(object sender, EventArgs e)
+        {
+			
+        }
+        private void OpenPckFile_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void OpenPckFile_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void OpenPckFile_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+        }
+        //End More no needed code but cant delete
+		//Editor Tab
+        private void ClosePckWorkspace_Click(object sender, EventArgs e)
+        {
+            closeToolStripMenuItem_Click(sender, e);
+        }
+        
     }
 }

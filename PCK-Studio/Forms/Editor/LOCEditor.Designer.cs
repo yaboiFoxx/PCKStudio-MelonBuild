@@ -131,10 +131,13 @@
             // 
             // buttonReplaceAll
             // 
+            this.buttonReplaceAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonReplaceAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonReplaceAll.FlatAppearance.BorderSize = 2;
             resources.ApplyResources(this.buttonReplaceAll, "buttonReplaceAll");
-            this.buttonReplaceAll.ForeColor = System.Drawing.Color.White;
+            this.buttonReplaceAll.ForeColor = System.Drawing.Color.Silver;
             this.buttonReplaceAll.Name = "buttonReplaceAll";
-            this.buttonReplaceAll.UseVisualStyleBackColor = true;
+            this.buttonReplaceAll.UseVisualStyleBackColor = false;
             this.buttonReplaceAll.Click += new System.EventHandler(this.buttonReplaceAll_Click);
             // 
             // dataGridViewLocEntryData
@@ -160,7 +163,10 @@
             // 
             // textBoxReplaceAll
             // 
+            this.textBoxReplaceAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.textBoxReplaceAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBoxReplaceAll, "textBoxReplaceAll");
+            this.textBoxReplaceAll.ForeColor = System.Drawing.Color.Silver;
             this.textBoxReplaceAll.Name = "textBoxReplaceAll";
             // 
             // treeViewLocKeys
@@ -178,21 +184,22 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button1.Image = global::PckStudio.Properties.Resources.wd_cl10;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.button1.Image = global::PckStudio.Properties.Resources.Close;
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -202,6 +209,9 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Name = "label1";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
             // 
             // LOCEditor
             // 

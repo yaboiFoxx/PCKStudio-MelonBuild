@@ -29,7 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            MetroFramework.Controls.MetroTabPage openTab;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new MetroFramework.Controls.MetroLabel();
+            this.ChangelogRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.pckOpen = new System.Windows.Forms.PictureBox();
             this.contextMenuPCKEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,52 +116,134 @@
             this.addPresetToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl = new MetroFramework.Controls.MetroTabControl();
-            this.openTab = new MetroFramework.Controls.MetroTabPage();
-            this.pckOpen = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new MetroFramework.Controls.MetroLabel();
-            this.labelVersion = new MetroFramework.Controls.MetroLabel();
-            this.ChangelogRichTextBox = new System.Windows.Forms.RichTextBox();
             this.editorTab = new MetroFramework.Controls.MetroTabPage();
+            this.LittleEndianCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.treeViewMain = new System.Windows.Forms.TreeView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.labelImageSize = new MetroFramework.Controls.MetroLabel();
             this.fileEntryCountLabel = new MetroFramework.Controls.MetroLabel();
             this.PropertiesTabControl = new MetroFramework.Controls.MetroTabControl();
             this.MetaTab = new MetroFramework.Controls.MetroTabPage();
-            this.LittleEndianCheckBox = new MetroFramework.Controls.MetroCheckBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.entryTypeTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.entryDataTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.buttonEdit = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.treeMeta = new System.Windows.Forms.TreeView();
+            this.entryDataTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.buttonEdit = new MetroFramework.Controls.MetroButton();
             this.label11 = new MetroFramework.Controls.MetroLabel();
-            this.treeViewMain = new System.Windows.Forms.TreeView();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.ClosePckWorkspace = new System.Windows.Forms.Button();
+            this.pckname = new System.Windows.Forms.Label();
             this.pictureBoxImagePreview = new PckStudio.PictureBoxWithInterpolationMode();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lineoverlay = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panel5 = new System.Windows.Forms.Panel();
+            openTab = new MetroFramework.Controls.MetroTabPage();
+            openTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pckOpen)).BeginInit();
             this.contextMenuPCKEntries.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.contextMenuMetaTree.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl.SuspendLayout();
-            this.openTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pckOpen)).BeginInit();
-            this.panel2.SuspendLayout();
             this.editorTab.SuspendLayout();
             this.PropertiesTabControl.SuspendLayout();
             this.MetaTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagePreview)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // openTab
+            // 
+            openTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            openTab.BackgroundImage = global::PckStudio.Properties.Resources.MainSelection1;
+            resources.ApplyResources(openTab, "openTab");
+            openTab.Controls.Add(this.pictureBox1);
+            openTab.Controls.Add(this.panel2);
+            openTab.Controls.Add(this.ChangelogRichTextBox);
+            openTab.Controls.Add(this.pckOpen);
+            openTab.ForeColor = System.Drawing.Color.Transparent;
+            openTab.HorizontalScrollbarBarColor = true;
+            openTab.HorizontalScrollbarHighlightOnWheel = false;
+            openTab.HorizontalScrollbarSize = 10;
+            openTab.Name = "openTab";
+            openTab.Style = MetroFramework.MetroColorStyle.Black;
+            openTab.Theme = MetroFramework.MetroThemeStyle.Dark;
+            openTab.UseStyleColors = true;
+            openTab.VerticalScrollbarBarColor = false;
+            openTab.VerticalScrollbarHighlightOnWheel = false;
+            openTab.VerticalScrollbarSize = 10;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.Name = "label4";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(224)))), ((int)(((byte)(109)))));
+            this.label3.Name = "label3";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::PckStudio.Properties.Resources.pcklogo;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Name = "panel2";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Name = "label5";
+            this.label5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // ChangelogRichTextBox
+            // 
+            resources.ApplyResources(this.ChangelogRichTextBox, "ChangelogRichTextBox");
+            this.ChangelogRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.ChangelogRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ChangelogRichTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.ChangelogRichTextBox.Name = "ChangelogRichTextBox";
+            this.ChangelogRichTextBox.ReadOnly = true;
+            this.ChangelogRichTextBox.TextChanged += new System.EventHandler(this.ChangelogRichTextBox_TextChanged);
+            // 
+            // pckOpen
+            // 
+            resources.ApplyResources(this.pckOpen, "pckOpen");
+            this.pckOpen.BackColor = System.Drawing.Color.Transparent;
+            this.pckOpen.Image = global::PckStudio.Properties.Resources.pckClosed;
+            this.pckOpen.Name = "pckOpen";
+            this.pckOpen.TabStop = false;
+            this.pckOpen.Click += new System.EventHandler(this.OpenPck_Click);
+            this.pckOpen.DragDrop += new System.Windows.Forms.DragEventHandler(this.OpenPck_DragDrop);
+            this.pckOpen.DragEnter += new System.Windows.Forms.DragEventHandler(this.OpenPck_DragEnter);
+            this.pckOpen.DragLeave += new System.EventHandler(this.OpenPck_DragLeave);
+            this.pckOpen.MouseEnter += new System.EventHandler(this.OpenPck_MouseEnter);
+            this.pckOpen.MouseLeave += new System.EventHandler(this.OpenPck_MouseLeave);
             // 
             // contextMenuPCKEntries
             // 
@@ -693,103 +783,29 @@
             this.deleteEntryToolStripMenuItem.Name = "deleteEntryToolStripMenuItem";
             this.deleteEntryToolStripMenuItem.Click += new System.EventHandler(this.deleteEntryToolStripMenuItem_Click);
             // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::PckStudio.Properties.Resources.pcklogo;
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.openTab);
+            this.tabControl.Controls.Add(openTab);
             this.tabControl.Controls.Add(this.editorTab);
             resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 1;
-            this.tabControl.Style = MetroFramework.MetroColorStyle.Silver;
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Style = MetroFramework.MetroColorStyle.Green;
             this.tabControl.TabStop = false;
             this.tabControl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.tabControl.UseSelectable = true;
-            // 
-            // openTab
-            // 
-            this.openTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.openTab.BackgroundImage = global::PckStudio.Properties.Resources.MainSelection1;
-            resources.ApplyResources(this.openTab, "openTab");
-            this.openTab.Controls.Add(this.pckOpen);
-            this.openTab.Controls.Add(this.panel2);
-            this.openTab.Controls.Add(this.ChangelogRichTextBox);
-            this.openTab.ForeColor = System.Drawing.Color.Transparent;
-            this.openTab.HorizontalScrollbarBarColor = true;
-            this.openTab.HorizontalScrollbarHighlightOnWheel = false;
-            this.openTab.HorizontalScrollbarSize = 10;
-            this.openTab.Name = "openTab";
-            this.openTab.Style = MetroFramework.MetroColorStyle.Black;
-            this.openTab.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.openTab.UseStyleColors = true;
-            this.openTab.VerticalScrollbarBarColor = false;
-            this.openTab.VerticalScrollbarHighlightOnWheel = false;
-            this.openTab.VerticalScrollbarSize = 10;
-            // 
-            // pckOpen
-            // 
-            resources.ApplyResources(this.pckOpen, "pckOpen");
-            this.pckOpen.BackColor = System.Drawing.Color.Transparent;
-            this.pckOpen.Image = global::PckStudio.Properties.Resources.pckClosed;
-            this.pckOpen.Name = "pckOpen";
-            this.pckOpen.TabStop = false;
-            this.pckOpen.Click += new System.EventHandler(this.OpenPck_Click);
-            this.pckOpen.DragDrop += new System.Windows.Forms.DragEventHandler(this.OpenPck_DragDrop);
-            this.pckOpen.DragEnter += new System.Windows.Forms.DragEventHandler(this.OpenPck_DragEnter);
-            this.pckOpen.DragLeave += new System.EventHandler(this.OpenPck_DragLeave);
-            this.pckOpen.MouseEnter += new System.EventHandler(this.OpenPck_MouseEnter);
-            this.pckOpen.MouseLeave += new System.EventHandler(this.OpenPck_MouseLeave);
-            // 
-            // panel2
-            // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.labelVersion);
-            this.panel2.Name = "panel2";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Name = "label5";
-            this.label5.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // labelVersion
-            // 
-            resources.ApplyResources(this.labelVersion, "labelVersion");
-            this.labelVersion.ForeColor = System.Drawing.Color.White;
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // ChangelogRichTextBox
-            // 
-            resources.ApplyResources(this.ChangelogRichTextBox, "ChangelogRichTextBox");
-            this.ChangelogRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.ChangelogRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ChangelogRichTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.ChangelogRichTextBox.Name = "ChangelogRichTextBox";
-            this.ChangelogRichTextBox.ReadOnly = true;
-            this.ChangelogRichTextBox.TextChanged += new System.EventHandler(this.ChangelogRichTextBox_TextChanged);
             // 
             // editorTab
             // 
             this.editorTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             resources.ApplyResources(this.editorTab, "editorTab");
+            this.editorTab.Controls.Add(this.LittleEndianCheckBox);
+            this.editorTab.Controls.Add(this.treeViewMain);
             this.editorTab.Controls.Add(this.labelImageSize);
             this.editorTab.Controls.Add(this.fileEntryCountLabel);
             this.editorTab.Controls.Add(this.PropertiesTabControl);
             this.editorTab.Controls.Add(this.label11);
-            this.editorTab.Controls.Add(this.treeViewMain);
+            this.editorTab.Controls.Add(this.panel3);
             this.editorTab.Controls.Add(this.pictureBoxImagePreview);
             this.editorTab.ForeColor = System.Drawing.Color.Transparent;
             this.editorTab.HorizontalScrollbarBarColor = true;
@@ -801,6 +817,42 @@
             this.editorTab.VerticalScrollbarBarColor = true;
             this.editorTab.VerticalScrollbarHighlightOnWheel = false;
             this.editorTab.VerticalScrollbarSize = 0;
+            // 
+            // LittleEndianCheckBox
+            // 
+            resources.ApplyResources(this.LittleEndianCheckBox, "LittleEndianCheckBox");
+            this.LittleEndianCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.LittleEndianCheckBox.ForeColor = System.Drawing.Color.Silver;
+            this.LittleEndianCheckBox.Name = "LittleEndianCheckBox";
+            this.LittleEndianCheckBox.Style = MetroFramework.MetroColorStyle.White;
+            this.LittleEndianCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.LittleEndianCheckBox.UseCustomBackColor = true;
+            this.LittleEndianCheckBox.UseCustomForeColor = true;
+            this.LittleEndianCheckBox.UseSelectable = true;
+            this.LittleEndianCheckBox.UseStyleColors = true;
+            // 
+            // treeViewMain
+            // 
+            this.treeViewMain.AllowDrop = true;
+            resources.ApplyResources(this.treeViewMain, "treeViewMain");
+            this.treeViewMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.treeViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeViewMain.ContextMenuStrip = this.contextMenuPCKEntries;
+            this.treeViewMain.ForeColor = System.Drawing.Color.White;
+            this.treeViewMain.ImageList = this.imageList;
+            this.treeViewMain.LabelEdit = true;
+            this.treeViewMain.Name = "treeViewMain";
+            this.treeViewMain.PathSeparator = "/";
+            this.treeViewMain.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewMain_BeforeLabelEdit);
+            this.treeViewMain.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.selectNode);
+            this.treeViewMain.DoubleClick += new System.EventHandler(this.treeViewMain_DoubleClick);
+            this.treeViewMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeViewMain_KeyDown);
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            resources.ApplyResources(this.imageList, "imageList");
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // labelImageSize
             // 
@@ -827,14 +879,11 @@
             // MetaTab
             // 
             this.MetaTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.MetaTab.Controls.Add(this.LittleEndianCheckBox);
-            this.MetaTab.Controls.Add(this.metroLabel2);
             this.MetaTab.Controls.Add(this.entryTypeTextBox);
-            this.MetaTab.Controls.Add(this.entryDataTextBox);
-            this.MetaTab.Controls.Add(this.buttonEdit);
-            this.MetaTab.Controls.Add(this.metroLabel1);
             this.MetaTab.Controls.Add(this.treeMeta);
+            this.MetaTab.Controls.Add(this.entryDataTextBox);
             this.MetaTab.Controls.Add(this.pictureBox2);
+            this.MetaTab.Controls.Add(this.buttonEdit);
             this.MetaTab.HorizontalScrollbarBarColor = true;
             this.MetaTab.HorizontalScrollbarHighlightOnWheel = false;
             this.MetaTab.HorizontalScrollbarSize = 10;
@@ -845,28 +894,10 @@
             this.MetaTab.VerticalScrollbarHighlightOnWheel = false;
             this.MetaTab.VerticalScrollbarSize = 10;
             // 
-            // LittleEndianCheckBox
-            // 
-            resources.ApplyResources(this.LittleEndianCheckBox, "LittleEndianCheckBox");
-            this.LittleEndianCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.LittleEndianCheckBox.ForeColor = System.Drawing.Color.Silver;
-            this.LittleEndianCheckBox.Name = "LittleEndianCheckBox";
-            this.LittleEndianCheckBox.Style = MetroFramework.MetroColorStyle.White;
-            this.LittleEndianCheckBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.LittleEndianCheckBox.UseCustomBackColor = true;
-            this.LittleEndianCheckBox.UseCustomForeColor = true;
-            this.LittleEndianCheckBox.UseSelectable = true;
-            this.LittleEndianCheckBox.UseStyleColors = true;
-            // 
-            // metroLabel2
-            // 
-            resources.ApplyResources(this.metroLabel2, "metroLabel2");
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
             // entryTypeTextBox
             // 
             resources.ApplyResources(this.entryTypeTextBox, "entryTypeTextBox");
+            this.entryTypeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             // 
             // 
             // 
@@ -890,13 +921,28 @@
             this.entryTypeTextBox.SelectionStart = 0;
             this.entryTypeTextBox.ShortcutsEnabled = true;
             this.entryTypeTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.entryTypeTextBox.UseCustomBackColor = true;
             this.entryTypeTextBox.UseSelectable = true;
             this.entryTypeTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.entryTypeTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // treeMeta
+            // 
+            this.treeMeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.treeMeta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeMeta.ContextMenuStrip = this.contextMenuMetaTree;
+            resources.ApplyResources(this.treeMeta, "treeMeta");
+            this.treeMeta.ForeColor = System.Drawing.SystemColors.Window;
+            this.treeMeta.Name = "treeMeta";
+            this.treeMeta.PathSeparator = "/";
+            this.treeMeta.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeMeta_AfterSelect);
+            this.treeMeta.DoubleClick += new System.EventHandler(this.treeMeta_DoubleClick);
+            this.treeMeta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeMeta_KeyDown);
+            // 
             // entryDataTextBox
             // 
             resources.ApplyResources(this.entryDataTextBox, "entryDataTextBox");
+            this.entryDataTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             // 
             // 
             // 
@@ -920,9 +966,18 @@
             this.entryDataTextBox.SelectionStart = 0;
             this.entryDataTextBox.ShortcutsEnabled = true;
             this.entryDataTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.entryDataTextBox.UseCustomBackColor = true;
             this.entryDataTextBox.UseSelectable = true;
             this.entryDataTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.entryDataTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::PckStudio.Properties.Resources.pcklogo;
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
             // 
             // buttonEdit
             // 
@@ -933,52 +988,35 @@
             this.buttonEdit.UseSelectable = true;
             this.buttonEdit.Click += new System.EventHandler(this.treeViewMain_DoubleClick);
             // 
-            // metroLabel1
-            // 
-            resources.ApplyResources(this.metroLabel1, "metroLabel1");
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // treeMeta
-            // 
-            this.treeMeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.treeMeta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeMeta.ContextMenuStrip = this.contextMenuMetaTree;
-            resources.ApplyResources(this.treeMeta, "treeMeta");
-            this.treeMeta.ForeColor = System.Drawing.SystemColors.Window;
-            this.treeMeta.Name = "treeMeta";
-            this.treeMeta.PathSeparator = "/";
-            this.treeMeta.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeMeta_AfterSelect);
-            this.treeMeta.DoubleClick += new System.EventHandler(this.treeMeta_DoubleClick);
-            this.treeMeta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeMeta_KeyDown);
-            // 
             // label11
             // 
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
             // 
-            // treeViewMain
+            // panel3
             // 
-            this.treeViewMain.AllowDrop = true;
-            resources.ApplyResources(this.treeViewMain, "treeViewMain");
-            this.treeViewMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.treeViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeViewMain.ContextMenuStrip = this.contextMenuPCKEntries;
-            this.treeViewMain.ForeColor = System.Drawing.Color.White;
-            this.treeViewMain.ImageList = this.imageList;
-            this.treeViewMain.LabelEdit = true;
-            this.treeViewMain.Name = "treeViewMain";
-            this.treeViewMain.PathSeparator = "/";
-            this.treeViewMain.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewMain_BeforeLabelEdit);
-            this.treeViewMain.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.selectNode);
-            this.treeViewMain.DoubleClick += new System.EventHandler(this.treeViewMain_DoubleClick);
-            this.treeViewMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeViewMain_KeyDown);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel3.BackgroundImage = global::PckStudio.Properties.Resources.pcktab;
+            this.panel3.Controls.Add(this.ClosePckWorkspace);
+            this.panel3.Controls.Add(this.pckname);
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
             // 
-            // imageList
+            // ClosePckWorkspace
             // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            resources.ApplyResources(this.imageList, "imageList");
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ClosePckWorkspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ClosePckWorkspace.BackgroundImage = global::PckStudio.Properties.Resources.Close;
+            resources.ApplyResources(this.ClosePckWorkspace, "ClosePckWorkspace");
+            this.ClosePckWorkspace.FlatAppearance.BorderSize = 0;
+            this.ClosePckWorkspace.Name = "ClosePckWorkspace";
+            this.ClosePckWorkspace.UseVisualStyleBackColor = false;
+            this.ClosePckWorkspace.Click += new System.EventHandler(this.ClosePckWorkspace_Click);
+            // 
+            // pckname
+            // 
+            resources.ApplyResources(this.pckname, "pckname");
+            this.pckname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.pckname.Name = "pckname";
             // 
             // pictureBoxImagePreview
             // 
@@ -989,18 +1027,10 @@
             this.pictureBoxImagePreview.Name = "pictureBoxImagePreview";
             this.pictureBoxImagePreview.TabStop = false;
             // 
-            // metroLabel3
-            // 
-            resources.ApplyResources(this.metroLabel3, "metroLabel3");
-            this.metroLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel3.ForeColor = System.Drawing.Color.Silver;
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -1016,6 +1046,7 @@
             // 
             resources.ApplyResources(this.button3, "button3");
             this.button3.BackgroundImage = global::PckStudio.Properties.Resources.Minimize;
+            this.button3.FlatAppearance.BorderSize = 0;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -1025,6 +1056,7 @@
             // 
             resources.ApplyResources(this.button2, "button2");
             this.button2.BackgroundImage = global::PckStudio.Properties.Resources.Maximize1;
+            this.button2.FlatAppearance.BorderSize = 0;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -1035,6 +1067,7 @@
             // 
             resources.ApplyResources(this.button1, "button1");
             this.button1.BackgroundImage = global::PckStudio.Properties.Resources.Close;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -1045,6 +1078,7 @@
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(224)))), ((int)(((byte)(109)))));
             this.label2.Name = "label2";
             this.label2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
@@ -1055,24 +1089,36 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label1.Name = "label1";
             this.label1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
             this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
             // 
-            // lineoverlay
+            // contextMenuStrip1
             // 
-            resources.ApplyResources(this.lineoverlay, "lineoverlay");
-            this.lineoverlay.Name = "lineoverlay";
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            resources.ApplyResources(this.contextMenuStrip2, "contextMenuStrip2");
+            // 
+            // panel5
+            // 
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
             // 
             // MainForm
             // 
             this.ApplyImageInvert = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.lineoverlay);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel1);
@@ -1087,21 +1133,23 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            openTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pckOpen)).EndInit();
             this.contextMenuPCKEntries.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.contextMenuMetaTree.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl.ResumeLayout(false);
-            this.openTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pckOpen)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.editorTab.ResumeLayout(false);
             this.editorTab.PerformLayout();
             this.PropertiesTabControl.ResumeLayout(false);
             this.MetaTab.ResumeLayout(false);
-            this.MetaTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagePreview)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1137,7 +1185,6 @@
         private System.Windows.Forms.ToolStripMenuItem importSkinsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importSkinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importExtractedSkinsFolderToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem folderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem skinToolStripMenuItem;
@@ -1172,7 +1219,6 @@
         private System.Windows.Forms.ToolStripMenuItem howToInstallPcksDirectlyToWiiUToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pCKCenterReleaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howPCKsWorkToolStripMenuItem;
-        private System.Windows.Forms.TreeView treeViewMain;
         private MetroFramework.Controls.MetroLabel fileEntryCountLabel;
         private PictureBoxWithInterpolationMode pictureBoxImagePreview;
         private MetroFramework.Controls.MetroLabel labelImageSize;
@@ -1197,23 +1243,13 @@
 		private System.Windows.Forms.ToolStripMenuItem entityMaterialsFileBINToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addTextureToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewFileInfoToolStripMenuItem;
-		private MetroFramework.Controls.MetroTabPage openTab;
-		private System.Windows.Forms.PictureBox pckOpen;
 		private MetroFramework.Controls.MetroLabel label5;
-		private MetroFramework.Controls.MetroLabel labelVersion;
 		private System.Windows.Forms.ToolStripMenuItem generateMipMapTextureToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroTabControl PropertiesTabControl;
         private MetroFramework.Controls.MetroTabPage MetaTab;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox entryTypeTextBox;
-        private MetroFramework.Controls.MetroTextBox entryDataTextBox;
-        private MetroFramework.Controls.MetroButton buttonEdit;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.TreeView treeMeta;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel lineoverlay;
         private System.Windows.Forms.RichTextBox ChangelogRichTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
@@ -1221,6 +1257,21 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private MetroFramework.Controls.MetroCheckBox LittleEndianCheckBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.Label pckname;
+        private System.Windows.Forms.PictureBox pckOpen;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button ClosePckWorkspace;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private MetroFramework.Controls.MetroTextBox entryTypeTextBox;
+        private MetroFramework.Controls.MetroTextBox entryDataTextBox;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private MetroFramework.Controls.MetroButton buttonEdit;
+        private System.Windows.Forms.TreeView treeViewMain;
     }
 }
 

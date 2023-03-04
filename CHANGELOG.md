@@ -1,4 +1,16 @@
-MELON BUILD 2.0.9 (BETA) 
+MELON BUILD BETA 2.2.0
+==========
+Some features may be completely missing or incomplete at this point in time!  
+
+- Fixed WiiU Installer Window
+-Fixed Loc Editor
+-Improved Bars
+-Added Tabs 
+-Fixed Fullscreen Error
+-Improved Images
+-Improved buttons
+
+MELON BUILD BETA 2.0.9 
 ==========
 Some features may be completely missing or incomplete at this point in time!  
 Whe are now on Github!

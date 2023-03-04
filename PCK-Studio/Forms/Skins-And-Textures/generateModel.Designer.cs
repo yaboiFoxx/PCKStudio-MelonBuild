@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(generateModel));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonDone = new System.Windows.Forms.Button();
             this.labelView = new System.Windows.Forms.Label();
             this.rotateRightBtn = new System.Windows.Forms.Button();
@@ -60,10 +55,7 @@
             this.buttonIMPORT = new System.Windows.Forms.Button();
             this.texturePreview = new System.Windows.Forms.PictureBox();
             this.labelTextureMappingPreview = new System.Windows.Forms.Label();
-            this.buttonImportModel = new System.Windows.Forms.Button();
             this.displayBox = new System.Windows.Forms.PictureBox();
-            this.buttonExportModel = new System.Windows.Forms.Button();
-            this.OpenJSONButton = new System.Windows.Forms.Button();
             this.buttonTemplate = new MetroFramework.Controls.MetroButton();
             this.checkTextureGenerate = new MetroFramework.Controls.MetroCheckBox();
             this.checkGuide = new MetroFramework.Controls.MetroCheckBox();
@@ -86,12 +78,20 @@
             this.U = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.V = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewBoxes = new System.Windows.Forms.ListView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openCSMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonImportModel = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenJSONButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonExportModel = new System.Windows.Forms.ToolStripMenuItem();
             this.tabBody.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.myTablePanel2.SuspendLayout();
@@ -105,48 +105,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.PosZUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PosYUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PosXUpDown)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripMenuItem,
-            this.cloneToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.changeColorToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
-            // 
-            // createToolStripMenuItem
-            // 
-            resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
-            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
-            // 
-            // cloneToolStripMenuItem
-            // 
-            resources.ApplyResources(this.cloneToolStripMenuItem, "cloneToolStripMenuItem");
-            this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
-            this.cloneToolStripMenuItem.Click += new System.EventHandler(this.cloneToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // changeColorToolStripMenuItem
-            // 
-            resources.ApplyResources(this.changeColorToolStripMenuItem, "changeColorToolStripMenuItem");
-            this.changeColorToolStripMenuItem.Name = "changeColorToolStripMenuItem";
-            this.changeColorToolStripMenuItem.Click += new System.EventHandler(this.changeColorToolStripMenuItem_Click);
             // 
             // buttonDone
             // 
-            this.buttonDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.buttonDone.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonDone.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             resources.ApplyResources(this.buttonDone, "buttonDone");
             this.buttonDone.ForeColor = System.Drawing.Color.White;
             this.buttonDone.Name = "buttonDone";
@@ -162,7 +130,8 @@
             // 
             // rotateRightBtn
             // 
-            this.rotateRightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.rotateRightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rotateRightBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             resources.ApplyResources(this.rotateRightBtn, "rotateRightBtn");
             this.rotateRightBtn.ForeColor = System.Drawing.Color.White;
             this.rotateRightBtn.Name = "rotateRightBtn";
@@ -171,7 +140,8 @@
             // 
             // rotateLeftBtn
             // 
-            this.rotateLeftBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.rotateLeftBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rotateLeftBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             resources.ApplyResources(this.rotateLeftBtn, "rotateLeftBtn");
             this.rotateLeftBtn.ForeColor = System.Drawing.Color.White;
             this.rotateLeftBtn.Name = "rotateLeftBtn";
@@ -294,8 +264,9 @@
             // 
             // buttonEXPORT
             // 
-            this.buttonEXPORT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonEXPORT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             resources.ApplyResources(this.buttonEXPORT, "buttonEXPORT");
+            this.buttonEXPORT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.buttonEXPORT.ForeColor = System.Drawing.Color.White;
             this.buttonEXPORT.Name = "buttonEXPORT";
             this.buttonEXPORT.UseVisualStyleBackColor = false;
@@ -309,8 +280,9 @@
             // 
             // buttonIMPORT
             // 
-            this.buttonIMPORT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonIMPORT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             resources.ApplyResources(this.buttonIMPORT, "buttonIMPORT");
+            this.buttonIMPORT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.buttonIMPORT.ForeColor = System.Drawing.Color.White;
             this.buttonIMPORT.Name = "buttonIMPORT";
             this.buttonIMPORT.UseVisualStyleBackColor = false;
@@ -329,40 +301,14 @@
             this.labelTextureMappingPreview.ForeColor = System.Drawing.Color.White;
             this.labelTextureMappingPreview.Name = "labelTextureMappingPreview";
             // 
-            // buttonImportModel
-            // 
-            this.buttonImportModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            resources.ApplyResources(this.buttonImportModel, "buttonImportModel");
-            this.buttonImportModel.ForeColor = System.Drawing.Color.White;
-            this.buttonImportModel.Name = "buttonImportModel";
-            this.buttonImportModel.UseVisualStyleBackColor = false;
-            this.buttonImportModel.Click += new System.EventHandler(this.buttonImportModel_Click);
-            // 
             // displayBox
             // 
             this.displayBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.displayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.displayBox, "displayBox");
             this.displayBox.Name = "displayBox";
             this.displayBox.TabStop = false;
             this.displayBox.Click += new System.EventHandler(this.displayBox_Click);
-            // 
-            // buttonExportModel
-            // 
-            this.buttonExportModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            resources.ApplyResources(this.buttonExportModel, "buttonExportModel");
-            this.buttonExportModel.ForeColor = System.Drawing.Color.White;
-            this.buttonExportModel.Name = "buttonExportModel";
-            this.buttonExportModel.UseVisualStyleBackColor = false;
-            this.buttonExportModel.Click += new System.EventHandler(this.buttonExportModel_Click);
-            // 
-            // OpenJSONButton
-            // 
-            this.OpenJSONButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            resources.ApplyResources(this.OpenJSONButton, "OpenJSONButton");
-            this.OpenJSONButton.ForeColor = System.Drawing.Color.White;
-            this.OpenJSONButton.Name = "OpenJSONButton";
-            this.OpenJSONButton.UseVisualStyleBackColor = false;
-            this.OpenJSONButton.Click += new System.EventHandler(this.OpenJSONButton_Click);
             // 
             // buttonTemplate
             // 
@@ -378,6 +324,7 @@
             this.checkTextureGenerate.Checked = true;
             this.checkTextureGenerate.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkTextureGenerate.Name = "checkTextureGenerate";
+            this.checkTextureGenerate.Style = MetroFramework.MetroColorStyle.Green;
             this.checkTextureGenerate.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.checkTextureGenerate.UseSelectable = true;
             // 
@@ -385,6 +332,7 @@
             // 
             resources.ApplyResources(this.checkGuide, "checkGuide");
             this.checkGuide.Name = "checkGuide";
+            this.checkGuide.Style = MetroFramework.MetroColorStyle.Green;
             this.checkGuide.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.checkGuide.UseSelectable = true;
             this.checkGuide.CheckedChanged += new System.EventHandler(this.render);
@@ -393,6 +341,7 @@
             // 
             resources.ApplyResources(this.checkBoxArmor, "checkBoxArmor");
             this.checkBoxArmor.Name = "checkBoxArmor";
+            this.checkBoxArmor.Style = MetroFramework.MetroColorStyle.Green;
             this.checkBoxArmor.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.checkBoxArmor.UseSelectable = true;
             this.checkBoxArmor.CheckedChanged += new System.EventHandler(this.render);
@@ -400,8 +349,9 @@
             // SizeXUpDown
             // 
             this.SizeXUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.SizeXUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SizeXUpDown.DecimalPlaces = 1;
-            this.SizeXUpDown.ForeColor = System.Drawing.SystemColors.Menu;
+            this.SizeXUpDown.ForeColor = System.Drawing.Color.Silver;
             resources.ApplyResources(this.SizeXUpDown, "SizeXUpDown");
             this.SizeXUpDown.Name = "SizeXUpDown";
             this.SizeXUpDown.ValueChanged += new System.EventHandler(this.SizeXUpDown_ValueChanged);
@@ -409,6 +359,7 @@
             // SizeYUpDown
             // 
             this.SizeYUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.SizeYUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SizeYUpDown.DecimalPlaces = 1;
             this.SizeYUpDown.ForeColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.SizeYUpDown, "SizeYUpDown");
@@ -418,6 +369,7 @@
             // SizeZUpDown
             // 
             this.SizeZUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.SizeZUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SizeZUpDown.DecimalPlaces = 1;
             this.SizeZUpDown.ForeColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.SizeZUpDown, "SizeZUpDown");
@@ -427,6 +379,7 @@
             // TextureXUpDown
             // 
             this.TextureXUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.TextureXUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextureXUpDown.ForeColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.TextureXUpDown, "TextureXUpDown");
             this.TextureXUpDown.Maximum = new decimal(new int[] {
@@ -440,6 +393,7 @@
             // TextureYUpDown
             // 
             this.TextureYUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.TextureYUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextureYUpDown.ForeColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.TextureYUpDown, "TextureYUpDown");
             this.TextureYUpDown.Maximum = new decimal(new int[] {
@@ -453,6 +407,7 @@
             // PosZUpDown
             // 
             this.PosZUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.PosZUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PosZUpDown.DecimalPlaces = 1;
             this.PosZUpDown.ForeColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.PosZUpDown, "PosZUpDown");
@@ -467,6 +422,7 @@
             // PosYUpDown
             // 
             this.PosYUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.PosYUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PosYUpDown.DecimalPlaces = 1;
             this.PosYUpDown.ForeColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.PosYUpDown, "PosYUpDown");
@@ -481,6 +437,7 @@
             // PosXUpDown
             // 
             this.PosXUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.PosXUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PosXUpDown.DecimalPlaces = 1;
             this.PosXUpDown.ForeColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.PosXUpDown, "PosXUpDown");
@@ -531,6 +488,8 @@
             // listViewBoxes
             // 
             this.listViewBoxes.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listViewBoxes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.listViewBoxes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listViewBoxes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Part,
             this.X,
@@ -556,31 +515,57 @@
             this.listViewBoxes.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             this.listViewBoxes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.delStuffUsingDelKey);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem,
+            this.cloneToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.changeColorToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            // 
+            // createToolStripMenuItem
+            // 
+            this.createToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openCSMToolStripMenuItem});
+            resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
+            // 
+            // openCSMToolStripMenuItem
+            // 
+            this.openCSMToolStripMenuItem.Name = "openCSMToolStripMenuItem";
+            resources.ApplyResources(this.openCSMToolStripMenuItem, "openCSMToolStripMenuItem");
+            // 
+            // cloneToolStripMenuItem
+            // 
+            resources.ApplyResources(this.cloneToolStripMenuItem, "cloneToolStripMenuItem");
+            this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
+            this.cloneToolStripMenuItem.Click += new System.EventHandler(this.cloneToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // changeColorToolStripMenuItem
+            // 
+            resources.ApplyResources(this.changeColorToolStripMenuItem, "changeColorToolStripMenuItem");
+            this.changeColorToolStripMenuItem.Name = "changeColorToolStripMenuItem";
+            this.changeColorToolStripMenuItem.Click += new System.EventHandler(this.changeColorToolStripMenuItem_Click);
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Name = "panel1";
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            // 
-            // panel2
-            // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button1.Image = global::PckStudio.Properties.Resources.wd_cl10;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -594,10 +579,47 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Name = "label2";
             // 
+            // menuStrip1
+            // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.BackgroundImage = global::PckStudio.Properties.Resources.menucontexbar;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonImportModel,
+            this.OpenJSONButton,
+            this.buttonExportModel});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
+            // 
+            // buttonImportModel
+            // 
+            this.buttonImportModel.Name = "buttonImportModel";
+            resources.ApplyResources(this.buttonImportModel, "buttonImportModel");
+            this.buttonImportModel.Click += new System.EventHandler(this.openCSMToolStripMenuItem1_Click);
+            // 
+            // OpenJSONButton
+            // 
+            this.OpenJSONButton.Name = "OpenJSONButton";
+            resources.ApplyResources(this.OpenJSONButton, "OpenJSONButton");
+            this.OpenJSONButton.Click += new System.EventHandler(this.openJSONToolStripMenuItem_Click);
+            // 
+            // buttonExportModel
+            // 
+            this.buttonExportModel.Name = "buttonExportModel";
+            resources.ApplyResources(this.buttonExportModel, "buttonExportModel");
+            this.buttonExportModel.Click += new System.EventHandler(this.eXPORTCSMToolStripMenuItem_Click);
+            // 
             // generateModel
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabBody);
             this.Controls.Add(this.panel1);
@@ -616,9 +638,6 @@
             this.Controls.Add(this.buttonTemplate);
             this.Controls.Add(this.displayBox);
             this.Controls.Add(this.listViewBoxes);
-            this.Controls.Add(this.OpenJSONButton);
-            this.Controls.Add(this.buttonExportModel);
-            this.Controls.Add(this.buttonImportModel);
             this.Controls.Add(this.buttonEXPORT);
             this.Controls.Add(this.labelTextureMappingPreview);
             this.Controls.Add(this.texturePreview);
@@ -631,6 +650,7 @@
             this.Controls.Add(this.buttonDone);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "generateModel";
@@ -640,7 +660,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.generateModel_FormClosing);
             this.Load += new System.EventHandler(this.generateModel_Load);
             this.SizeChanged += new System.EventHandler(this.generateModel_SizeChanged);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.tabBody.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.myTablePanel2.ResumeLayout(false);
@@ -655,24 +674,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.PosZUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PosYUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PosXUpDown)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cloneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeColorToolStripMenuItem;
         private System.Windows.Forms.Button buttonDone;
-        private System.Windows.Forms.Button OpenJSONButton;
-        private System.Windows.Forms.Button buttonExportModel;
         private System.Windows.Forms.PictureBox displayBox;
-        private System.Windows.Forms.Button buttonImportModel;
         private System.Windows.Forms.Label labelTextureMappingPreview;
         private System.Windows.Forms.PictureBox texturePreview;
         private System.Windows.Forms.Button buttonIMPORT;
@@ -722,7 +736,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabBody;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openCSMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cloneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeColorToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buttonImportModel;
+        private System.Windows.Forms.ToolStripMenuItem OpenJSONButton;
+        private System.Windows.Forms.ToolStripMenuItem buttonExportModel;
     }
 }

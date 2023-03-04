@@ -34,7 +34,7 @@ namespace PckStudio.Forms
         {
             this.Close(); 
         }
-        // Drag panel
+        
         bool mousedown;
         private Point offset;
 
@@ -58,6 +58,11 @@ namespace PckStudio.Forms
                 Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
             }
         }
-        // Drag panel
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
     }
 }

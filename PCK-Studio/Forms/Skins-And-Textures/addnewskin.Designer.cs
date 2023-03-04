@@ -53,11 +53,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAnimGen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.closeskincreator = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.capePictureBox = new PckStudio.PictureBoxWithInterpolationMode();
             this.skinPictureBoxTexture = new PckStudio.PictureBoxWithInterpolationMode();
-            this.closeskincreator = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.capePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBoxTexture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -120,18 +122,24 @@
             // 
             // buttonDone
             // 
+            this.buttonDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             resources.ApplyResources(this.buttonDone, "buttonDone");
-            this.buttonDone.ForeColor = System.Drawing.Color.Firebrick;
+            this.buttonDone.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonDone.FlatAppearance.BorderSize = 2;
+            this.buttonDone.ForeColor = System.Drawing.Color.White;
             this.buttonDone.Name = "buttonDone";
-            this.buttonDone.UseVisualStyleBackColor = true;
+            this.buttonDone.UseVisualStyleBackColor = false;
             this.buttonDone.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // buttonModelGen
             // 
+            this.buttonModelGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonModelGen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonModelGen.FlatAppearance.BorderSize = 2;
             resources.ApplyResources(this.buttonModelGen, "buttonModelGen");
             this.buttonModelGen.ForeColor = System.Drawing.Color.White;
             this.buttonModelGen.Name = "buttonModelGen";
-            this.buttonModelGen.UseVisualStyleBackColor = true;
+            this.buttonModelGen.UseVisualStyleBackColor = false;
             this.buttonModelGen.Click += new System.EventHandler(this.CreateCustomModel_Click);
             // 
             // buttonCape
@@ -151,7 +159,7 @@
             // displayBox
             // 
             this.displayBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.displayBox.BackgroundImage = global::PckStudio.Properties.Resources.MainSelection1;
+            this.displayBox.BackgroundImage = global::PckStudio.Properties.Resources.skincreator_model_view;
             resources.ApplyResources(this.displayBox, "displayBox");
             this.displayBox.Name = "displayBox";
             this.displayBox.TabStop = false;
@@ -292,23 +300,46 @@
             // 
             // buttonAnimGen
             // 
+            this.buttonAnimGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonAnimGen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonAnimGen.FlatAppearance.BorderSize = 2;
             resources.ApplyResources(this.buttonAnimGen, "buttonAnimGen");
             this.buttonAnimGen.ForeColor = System.Drawing.Color.White;
             this.buttonAnimGen.Name = "buttonAnimGen";
-            this.buttonAnimGen.UseVisualStyleBackColor = true;
+            this.buttonAnimGen.UseVisualStyleBackColor = false;
             this.buttonAnimGen.Click += new System.EventHandler(this.buttonAnimGen_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.closeskincreator);
             this.panel1.Controls.Add(this.label5);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackgroundImage = global::PckStudio.Properties.Resources.Minimize;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // closeskincreator
+            // 
+            resources.ApplyResources(this.closeskincreator, "closeskincreator");
+            this.closeskincreator.BackgroundImage = global::PckStudio.Properties.Resources.Close;
+            this.closeskincreator.FlatAppearance.BorderSize = 0;
+            this.closeskincreator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.closeskincreator.Name = "closeskincreator";
+            this.closeskincreator.UseVisualStyleBackColor = true;
+            this.closeskincreator.Click += new System.EventHandler(this.closeskincreator_Click);
             // 
             // label5
             // 
@@ -337,28 +368,18 @@
             this.skinPictureBoxTexture.TabStop = false;
             this.skinPictureBoxTexture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // closeskincreator
+            // pictureBox1
             // 
-            this.closeskincreator.BackgroundImage = global::PckStudio.Properties.Resources.Close;
-            resources.ApplyResources(this.closeskincreator, "closeskincreator");
-            this.closeskincreator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.closeskincreator.Name = "closeskincreator";
-            this.closeskincreator.UseVisualStyleBackColor = true;
-            this.closeskincreator.Click += new System.EventHandler(this.closeskincreator_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::PckStudio.Properties.Resources.Minimize;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.pictureBox1.BackgroundImage = global::PckStudio.Properties.Resources.melon_Foxx_logo11;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // addNewSkin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonAnimGen);
             this.Controls.Add(this.label4);
@@ -393,6 +414,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.capePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBoxTexture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,5 +446,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button closeskincreator;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

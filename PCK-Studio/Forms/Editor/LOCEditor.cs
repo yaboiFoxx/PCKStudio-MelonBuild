@@ -9,6 +9,7 @@ using RichPresenceClient;
 using PckStudio.Forms.Additional_Popups.Loc;
 using PckStudio.Classes.IO.LOC;
 using System.IO;
+using System.Drawing;
 
 namespace PckStudio.Forms.Editor
 {
@@ -52,7 +53,7 @@ namespace PckStudio.Forms.Editor
 			if (node == null ||
 				!currentLoc.LocKeys.ContainsKey(node.Text))
 			{
-				MessageBox.Show("Selected Node does not seem to be in the loc file");
+                MessageBox.Show("Selected Node does not seem to be in the loc file");
 				return;
 			}
 			ReloadTranslationTable();
@@ -86,7 +87,7 @@ namespace PckStudio.Forms.Editor
 			if (e.ColumnIndex != 1 ||
 				treeViewLocKeys.SelectedNode == null)
             {
-				MessageBox.Show("something went wrong");
+				System.Windows.MessageBox.Show("something went wrong");
 				return;
             }
 			currentLoc.SetLocEntry(treeViewLocKeys.SelectedNode.Text, tbl.Rows[e.RowIndex][0].ToString(), tbl.Rows[e.RowIndex][1].ToString());
@@ -162,19 +163,27 @@ namespace PckStudio.Forms.Editor
 			this.Close();
 		}
 
-		private void panel1_MouseDown(object sender, MouseEventArgs e)
-		{
+        bool mousedown;
+        private Point offset;
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mousedown = true;
+        }
 
-		}
+        private void panel1_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            mousedown = false;
+        }
 
-		private void panel1_MouseUp(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void panel1_MouseMove(object sender, MouseEventArgs e)
-		{
-
-		}
-	}
+        private void panel1_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (mousedown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+    }
 }

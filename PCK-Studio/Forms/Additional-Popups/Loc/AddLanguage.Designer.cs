@@ -35,10 +35,10 @@
             // LanguageComboBox
             // 
             this.LanguageComboBox.FormattingEnabled = true;
-            this.LanguageComboBox.ItemHeight = 23;
+            this.LanguageComboBox.ItemHeight = 25;
             this.LanguageComboBox.Location = new System.Drawing.Point(23, 63);
             this.LanguageComboBox.Name = "LanguageComboBox";
-            this.LanguageComboBox.Size = new System.Drawing.Size(243, 29);
+            this.LanguageComboBox.Size = new System.Drawing.Size(243, 31);
             this.LanguageComboBox.TabIndex = 0;
             this.LanguageComboBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.LanguageComboBox.UseSelectable = true;
@@ -67,7 +67,7 @@
             this.MinimumSize = new System.Drawing.Size(289, 140);
             this.Name = "AddLanguage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Style = MetroFramework.MetroColorStyle.Silver;
+            this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = "Add Language";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

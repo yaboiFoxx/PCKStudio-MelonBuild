@@ -362,7 +362,6 @@ namespace PckStudio
                 if (ofdd.ShowDialog() == DialogResult.OK)
                 {
                     checkImage(Image.FromFile(ofdd.FileName));
-                    buttonDone.ForeColor = Color.Green;
                 }
             }
         }

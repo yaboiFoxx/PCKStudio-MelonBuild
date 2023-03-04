@@ -629,6 +629,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pcktab.png" />
+    <None Include="Resources\skincreator-model-view.png" />
+    <None Include="Resources\wiiuinstaller-background.png" />
     <None Include="Resources\pckstudiomelonbuild-credits-view.PNG" />
     <None Include="Resources\pckstudiomelonbuild-view.PNG" />
     <None Include="Resources\pcklogo.png" />
@@ -694,6 +697,11 @@
     <None Include="Resources\Maximize1.png" />
     <None Include="Resources\melon Foxx logo.png" />
     <None Include="Resources\melon Foxx logo1.png" />
+    <None Include="Resources\openbttnhome.png" />
+    <None Include="Resources\mainbuttonopenpck.png" />
+    <None Include="Resources\openpckbuttonoff.png" />
+    <None Include="Resources\newpckbuttonon.png" />
+    <None Include="Resources\newpckbuttonoff.png" />
     <Content Include="Resources\PCK-Studio_Logo.ico" />
     <None Include="Resources\bg1.png" />
     <Content Include="Resources\NoImageFound.png" />

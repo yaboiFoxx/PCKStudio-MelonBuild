@@ -181,23 +181,30 @@ namespace PckStudio.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2.0.7 (BETA) 
+        ///   Looks up a localized string similar to MELON BUILD BETA 2.1.0 
         ///==========
-        ///PCK STUDIO MELON BUILD
+        ///Some features may be completely missing or incomplete at this point in time!  
         ///
-        ///- New UI Designed by yaboiFoxx
-        ///- Fixed drag bar
-        ///- Supports fullscreen now 
+        ///- Fixed WiiU Installer Window
+        ///
+        ///
+        ///
+        ///
+        ///MELON BUILD BETA 2.0.9 
+        ///==========
+        ///Some features may be completely missing or incomplete at this point in time!  
+        ///Whe are now on Github!
+        ///
+        ///- New UI in main menu, program Info, etc
+        ///- Fixed menu bar 
+        ///- Supports fullscreen 
+        ///- Tweaked skin creator (STILL IN DEVELOPMENT!!!!)
+        ///- Fixed noimage 
+        ///
         /// 
         ///7.0 (BETA)  
         ///==========  
-        ///Some features may be completely missing or incomplete at this point in time!  
-        ///  
-        ///-Massive codebase overhaul and optimization lead by miku-666 (aka NessieHax)!!!  
-        ///-Some UI redesigned by yaboiFoxx  
-        ///-Improved the changelog!  
-        ///-New icons for each of the file types, with unique image icons for skin, texture, and cape files  
-        ///-Added the ability to create Textur [rest of string was truncated]&quot;;.
+        ///Some features may be completely missing or inco [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CHANGELOG {
             get {
@@ -358,6 +365,16 @@ namespace PckStudio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap mainbuttonopenpck {
+            get {
+                object obj = ResourceManager.GetObject("mainbuttonopenpck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap MainSelection1 {
             get {
                 object obj = ResourceManager.GetObject("MainSelection1", resourceCulture);
@@ -401,6 +418,16 @@ namespace PckStudio.Properties {
         public static System.Drawing.Bitmap melon_Foxx_logo1 {
             get {
                 object obj = ResourceManager.GetObject("melon Foxx logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap melon_Foxx_logo11 {
+            get {
+                object obj = ResourceManager.GetObject("melon Foxx logo11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -468,9 +495,49 @@ namespace PckStudio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap newpckbuttonoff {
+            get {
+                object obj = ResourceManager.GetObject("newpckbuttonoff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap newpckbuttonon {
+            get {
+                object obj = ResourceManager.GetObject("newpckbuttonon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap NoImageFound {
             get {
                 object obj = ResourceManager.GetObject("NoImageFound", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap openbttnhome {
+            get {
+                object obj = ResourceManager.GetObject("openbttnhome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap openpckbuttonoff {
+            get {
+                object obj = ResourceManager.GetObject("openpckbuttonoff", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -578,6 +645,16 @@ namespace PckStudio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap pcktab {
+            get {
+                object obj = ResourceManager.GetObject("pcktab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap power3 {
             get {
                 object obj = ResourceManager.GetObject("power3", resourceCulture);
@@ -621,6 +698,16 @@ namespace PckStudio.Properties {
         public static System.Drawing.Bitmap SKIN_ICON {
             get {
                 object obj = ResourceManager.GetObject("SKIN_ICON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap skincreator_model_view {
+            get {
+                object obj = ResourceManager.GetObject("skincreator-model-view", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -766,6 +853,16 @@ namespace PckStudio.Properties {
         public static System.Drawing.Bitmap wiiu {
             get {
                 object obj = ResourceManager.GetObject("wiiu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap wiiuinstaller_background {
+            get {
+                object obj = ResourceManager.GetObject("wiiuinstaller-background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -36,8 +36,6 @@
             this.uncheckButton = new MetroFramework.Controls.MetroButton();
             this.checkButton = new MetroFramework.Controls.MetroButton();
             this.toolTip = new MetroFramework.Components.MetroToolTip();
-            this.resetButton = new MetroFramework.Controls.MetroButton();
-            this.templateButton = new MetroFramework.Controls.MetroButton();
             this.rightLegOCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.headOCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.leftLegOCheckBox = new MetroFramework.Controls.MetroCheckBox();
@@ -70,19 +68,21 @@
             this.statueCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.zombieCheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.staticLegsCheckBox = new MetroFramework.Controls.MetroCheckBox();
+            this.resetButton = new MetroFramework.Controls.MetroButton();
+            this.templateButton = new MetroFramework.Controls.MetroButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(56, 358);
+            this.closeButton.Location = new System.Drawing.Point(648, 359);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(126, 23);
             this.closeButton.TabIndex = 1;
@@ -93,7 +93,7 @@
             // 
             // copyButton
             // 
-            this.copyButton.Location = new System.Drawing.Point(23, 237);
+            this.copyButton.Location = new System.Drawing.Point(617, 236);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(186, 23);
             this.copyButton.TabIndex = 22;
@@ -104,7 +104,7 @@
             // 
             // importButton
             // 
-            this.importButton.Location = new System.Drawing.Point(23, 179);
+            this.importButton.Location = new System.Drawing.Point(617, 178);
             this.importButton.Name = "importButton";
             this.importButton.Size = new System.Drawing.Size(186, 23);
             this.importButton.TabIndex = 23;
@@ -115,7 +115,7 @@
             // 
             // exportButton
             // 
-            this.exportButton.Location = new System.Drawing.Point(23, 150);
+            this.exportButton.Location = new System.Drawing.Point(617, 149);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(186, 23);
             this.exportButton.TabIndex = 24;
@@ -129,9 +129,9 @@
             this.animValue.AutoSize = true;
             this.animValue.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.animValue.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.animValue.Location = new System.Drawing.Point(63, 300);
+            this.animValue.Location = new System.Drawing.Point(653, 296);
             this.animValue.Name = "animValue";
-            this.animValue.Size = new System.Drawing.Size(110, 25);
+            this.animValue.Size = new System.Drawing.Size(119, 27);
             this.animValue.TabIndex = 25;
             this.animValue.Text = "0x00000000";
             this.animValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@
             // 
             // uncheckButton
             // 
-            this.uncheckButton.Location = new System.Drawing.Point(23, 92);
+            this.uncheckButton.Location = new System.Drawing.Point(617, 91);
             this.uncheckButton.Name = "uncheckButton";
             this.uncheckButton.Size = new System.Drawing.Size(186, 23);
             this.uncheckButton.TabIndex = 26;
@@ -152,7 +152,7 @@
             // 
             this.checkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.checkButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkButton.Location = new System.Drawing.Point(23, 63);
+            this.checkButton.Location = new System.Drawing.Point(617, 62);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(186, 23);
             this.checkButton.TabIndex = 27;
@@ -168,35 +168,13 @@
             this.toolTip.StyleManager = null;
             this.toolTip.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // resetButton
-            // 
-            this.resetButton.Location = new System.Drawing.Point(23, 208);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(186, 23);
-            this.resetButton.TabIndex = 28;
-            this.resetButton.Text = "Restore ANIM";
-            this.resetButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.resetButton.UseSelectable = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
-            // templateButton
-            // 
-            this.templateButton.Location = new System.Drawing.Point(23, 121);
-            this.templateButton.Name = "templateButton";
-            this.templateButton.Size = new System.Drawing.Size(186, 23);
-            this.templateButton.TabIndex = 29;
-            this.templateButton.Text = "Skin Presets";
-            this.templateButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.templateButton.UseSelectable = true;
-            this.templateButton.Click += new System.EventHandler(this.templateButton_Click);
-            // 
             // rightLegOCheckBox
             // 
             this.rightLegOCheckBox.AutoSize = true;
             this.rightLegOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightLegOCheckBox.Location = new System.Drawing.Point(416, 256);
+            this.rightLegOCheckBox.Location = new System.Drawing.Point(206, 251);
             this.rightLegOCheckBox.Name = "rightLegOCheckBox";
-            this.rightLegOCheckBox.Size = new System.Drawing.Size(199, 19);
+            this.rightLegOCheckBox.Size = new System.Drawing.Size(188, 21);
             this.rightLegOCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.rightLegOCheckBox.TabIndex = 43;
             this.rightLegOCheckBox.Text = "Remove Right Leg Layer Box";
@@ -210,9 +188,9 @@
             // 
             this.headOCheckBox.AutoSize = true;
             this.headOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.headOCheckBox.Location = new System.Drawing.Point(416, 98);
+            this.headOCheckBox.Location = new System.Drawing.Point(206, 93);
             this.headOCheckBox.Name = "headOCheckBox";
-            this.headOCheckBox.Size = new System.Drawing.Size(173, 19);
+            this.headOCheckBox.Size = new System.Drawing.Size(163, 21);
             this.headOCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.headOCheckBox.TabIndex = 42;
             this.headOCheckBox.Text = "Remove Head Layer Box";
@@ -226,9 +204,9 @@
             // 
             this.leftLegOCheckBox.AutoSize = true;
             this.leftLegOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftLegOCheckBox.Location = new System.Drawing.Point(416, 222);
+            this.leftLegOCheckBox.Location = new System.Drawing.Point(206, 217);
             this.leftLegOCheckBox.Name = "leftLegOCheckBox";
-            this.leftLegOCheckBox.Size = new System.Drawing.Size(190, 19);
+            this.leftLegOCheckBox.Size = new System.Drawing.Size(182, 21);
             this.leftLegOCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.leftLegOCheckBox.TabIndex = 41;
             this.leftLegOCheckBox.Text = "Remove Left Leg Layer Box";
@@ -242,9 +220,9 @@
             // 
             this.leftArmOCheckBox.AutoSize = true;
             this.leftArmOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftArmOCheckBox.Location = new System.Drawing.Point(416, 160);
+            this.leftArmOCheckBox.Location = new System.Drawing.Point(206, 155);
             this.leftArmOCheckBox.Name = "leftArmOCheckBox";
-            this.leftArmOCheckBox.Size = new System.Drawing.Size(194, 19);
+            this.leftArmOCheckBox.Size = new System.Drawing.Size(186, 21);
             this.leftArmOCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.leftArmOCheckBox.TabIndex = 39;
             this.leftArmOCheckBox.Text = "Remove Left Arm Layer Box";
@@ -258,9 +236,9 @@
             // 
             this.bodyOCheckBox.AutoSize = true;
             this.bodyOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.bodyOCheckBox.Location = new System.Drawing.Point(416, 129);
+            this.bodyOCheckBox.Location = new System.Drawing.Point(206, 124);
             this.bodyOCheckBox.Name = "bodyOCheckBox";
-            this.bodyOCheckBox.Size = new System.Drawing.Size(172, 19);
+            this.bodyOCheckBox.Size = new System.Drawing.Size(163, 21);
             this.bodyOCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.bodyOCheckBox.TabIndex = 38;
             this.bodyOCheckBox.Text = "Remove Body Layer Box";
@@ -274,9 +252,9 @@
             // 
             this.rightLegCheckBox.AutoSize = true;
             this.rightLegCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightLegCheckBox.Location = new System.Drawing.Point(242, 256);
+            this.rightLegCheckBox.Location = new System.Drawing.Point(32, 251);
             this.rightLegCheckBox.Name = "rightLegCheckBox";
-            this.rightLegCheckBox.Size = new System.Drawing.Size(162, 19);
+            this.rightLegCheckBox.Size = new System.Drawing.Size(152, 21);
             this.rightLegCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.rightLegCheckBox.TabIndex = 37;
             this.rightLegCheckBox.Text = "Remove Right Leg Box";
@@ -290,9 +268,9 @@
             // 
             this.slimCheckBox.AutoSize = true;
             this.slimCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.slimCheckBox.Location = new System.Drawing.Point(416, 67);
+            this.slimCheckBox.Location = new System.Drawing.Point(206, 62);
             this.slimCheckBox.Name = "slimCheckBox";
-            this.slimCheckBox.Size = new System.Drawing.Size(151, 19);
+            this.slimCheckBox.Size = new System.Drawing.Size(154, 21);
             this.slimCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.slimCheckBox.TabIndex = 36;
             this.slimCheckBox.Text = "64x64 Alex/Slim Skin";
@@ -306,9 +284,9 @@
             // 
             this.headCheckBox.AutoSize = true;
             this.headCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.headCheckBox.Location = new System.Drawing.Point(242, 98);
+            this.headCheckBox.Location = new System.Drawing.Point(32, 93);
             this.headCheckBox.Name = "headCheckBox";
-            this.headCheckBox.Size = new System.Drawing.Size(136, 19);
+            this.headCheckBox.Size = new System.Drawing.Size(127, 21);
             this.headCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.headCheckBox.TabIndex = 35;
             this.headCheckBox.Text = "Remove Head Box";
@@ -322,9 +300,9 @@
             // 
             this.leftLegCheckBox.AutoSize = true;
             this.leftLegCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftLegCheckBox.Location = new System.Drawing.Point(242, 222);
+            this.leftLegCheckBox.Location = new System.Drawing.Point(32, 217);
             this.leftLegCheckBox.Name = "leftLegCheckBox";
-            this.leftLegCheckBox.Size = new System.Drawing.Size(153, 19);
+            this.leftLegCheckBox.Size = new System.Drawing.Size(146, 21);
             this.leftLegCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.leftLegCheckBox.TabIndex = 34;
             this.leftLegCheckBox.Text = "Remove Left Leg Box";
@@ -338,9 +316,9 @@
             // 
             this.rightArmCheckBox.AutoSize = true;
             this.rightArmCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightArmCheckBox.Location = new System.Drawing.Point(242, 191);
+            this.rightArmCheckBox.Location = new System.Drawing.Point(32, 186);
             this.rightArmCheckBox.Name = "rightArmCheckBox";
-            this.rightArmCheckBox.Size = new System.Drawing.Size(166, 19);
+            this.rightArmCheckBox.Size = new System.Drawing.Size(156, 21);
             this.rightArmCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.rightArmCheckBox.TabIndex = 33;
             this.rightArmCheckBox.Text = "Remove Right Arm Box";
@@ -354,9 +332,9 @@
             // 
             this.leftArmCheckBox.AutoSize = true;
             this.leftArmCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftArmCheckBox.Location = new System.Drawing.Point(242, 160);
+            this.leftArmCheckBox.Location = new System.Drawing.Point(32, 155);
             this.leftArmCheckBox.Name = "leftArmCheckBox";
-            this.leftArmCheckBox.Size = new System.Drawing.Size(157, 19);
+            this.leftArmCheckBox.Size = new System.Drawing.Size(150, 21);
             this.leftArmCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.leftArmCheckBox.TabIndex = 32;
             this.leftArmCheckBox.Text = "Remove Left Arm Box";
@@ -370,9 +348,9 @@
             // 
             this.bodyCheckBox.AutoSize = true;
             this.bodyCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.bodyCheckBox.Location = new System.Drawing.Point(242, 129);
+            this.bodyCheckBox.Location = new System.Drawing.Point(32, 124);
             this.bodyCheckBox.Name = "bodyCheckBox";
-            this.bodyCheckBox.Size = new System.Drawing.Size(135, 19);
+            this.bodyCheckBox.Size = new System.Drawing.Size(127, 21);
             this.bodyCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.bodyCheckBox.TabIndex = 31;
             this.bodyCheckBox.Text = "Remove Body Box";
@@ -388,9 +366,9 @@
             this.classicCheckBox.Checked = true;
             this.classicCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.classicCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.classicCheckBox.Location = new System.Drawing.Point(242, 67);
+            this.classicCheckBox.Location = new System.Drawing.Point(32, 62);
             this.classicCheckBox.Name = "classicCheckBox";
-            this.classicCheckBox.Size = new System.Drawing.Size(136, 19);
+            this.classicCheckBox.Size = new System.Drawing.Size(138, 21);
             this.classicCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.classicCheckBox.TabIndex = 30;
             this.classicCheckBox.Text = "64x64 Classic Skin";
@@ -404,9 +382,9 @@
             this.rightArmOCheckBox.AutoSize = true;
             this.rightArmOCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.rightArmOCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightArmOCheckBox.Location = new System.Drawing.Point(416, 191);
+            this.rightArmOCheckBox.Location = new System.Drawing.Point(206, 186);
             this.rightArmOCheckBox.Name = "rightArmOCheckBox";
-            this.rightArmOCheckBox.Size = new System.Drawing.Size(203, 19);
+            this.rightArmOCheckBox.Size = new System.Drawing.Size(192, 21);
             this.rightArmOCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.rightArmOCheckBox.TabIndex = 40;
             this.rightArmOCheckBox.Text = "Remove Right Arm Layer Box";
@@ -420,9 +398,9 @@
             // 
             this.rightLeggingCheckBox.AutoSize = true;
             this.rightLeggingCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightLeggingCheckBox.Location = new System.Drawing.Point(638, 222);
+            this.rightLeggingCheckBox.Location = new System.Drawing.Point(428, 217);
             this.rightLeggingCheckBox.Name = "rightLeggingCheckBox";
-            this.rightLeggingCheckBox.Size = new System.Drawing.Size(173, 19);
+            this.rightLeggingCheckBox.Size = new System.Drawing.Size(164, 21);
             this.rightLeggingCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.rightLeggingCheckBox.TabIndex = 49;
             this.rightLeggingCheckBox.Text = "Render Right Leg Armor";
@@ -434,9 +412,9 @@
             // 
             this.helmetCheckBox.AutoSize = true;
             this.helmetCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.helmetCheckBox.Location = new System.Drawing.Point(638, 67);
+            this.helmetCheckBox.Location = new System.Drawing.Point(428, 62);
             this.helmetCheckBox.Name = "helmetCheckBox";
-            this.helmetCheckBox.Size = new System.Drawing.Size(147, 19);
+            this.helmetCheckBox.Size = new System.Drawing.Size(139, 21);
             this.helmetCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.helmetCheckBox.TabIndex = 48;
             this.helmetCheckBox.Text = "Render Head Armor";
@@ -448,9 +426,9 @@
             // 
             this.leftLeggingCheckBox.AutoSize = true;
             this.leftLeggingCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftLeggingCheckBox.Location = new System.Drawing.Point(638, 191);
+            this.leftLeggingCheckBox.Location = new System.Drawing.Point(428, 186);
             this.leftLeggingCheckBox.Name = "leftLeggingCheckBox";
-            this.leftLeggingCheckBox.Size = new System.Drawing.Size(164, 19);
+            this.leftLeggingCheckBox.Size = new System.Drawing.Size(158, 21);
             this.leftLeggingCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.leftLeggingCheckBox.TabIndex = 47;
             this.leftLeggingCheckBox.Text = "Render Left Leg Armor";
@@ -462,9 +440,9 @@
             // 
             this.rightArmorCheckBox.AutoSize = true;
             this.rightArmorCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.rightArmorCheckBox.Location = new System.Drawing.Point(638, 160);
+            this.rightArmorCheckBox.Location = new System.Drawing.Point(428, 155);
             this.rightArmorCheckBox.Name = "rightArmorCheckBox";
-            this.rightArmorCheckBox.Size = new System.Drawing.Size(177, 19);
+            this.rightArmorCheckBox.Size = new System.Drawing.Size(168, 21);
             this.rightArmorCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.rightArmorCheckBox.TabIndex = 46;
             this.rightArmorCheckBox.Text = "Render Right Arm Armor";
@@ -476,9 +454,9 @@
             // 
             this.leftArmorCheckBox.AutoSize = true;
             this.leftArmorCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.leftArmorCheckBox.Location = new System.Drawing.Point(638, 129);
+            this.leftArmorCheckBox.Location = new System.Drawing.Point(428, 124);
             this.leftArmorCheckBox.Name = "leftArmorCheckBox";
-            this.leftArmorCheckBox.Size = new System.Drawing.Size(168, 19);
+            this.leftArmorCheckBox.Size = new System.Drawing.Size(162, 21);
             this.leftArmorCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.leftArmorCheckBox.TabIndex = 45;
             this.leftArmorCheckBox.Text = "Render Left Arm Armor";
@@ -490,9 +468,9 @@
             // 
             this.chestplateCheckBox.AutoSize = true;
             this.chestplateCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chestplateCheckBox.Location = new System.Drawing.Point(638, 98);
+            this.chestplateCheckBox.Location = new System.Drawing.Point(428, 93);
             this.chestplateCheckBox.Name = "chestplateCheckBox";
-            this.chestplateCheckBox.Size = new System.Drawing.Size(146, 19);
+            this.chestplateCheckBox.Size = new System.Drawing.Size(139, 21);
             this.chestplateCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.chestplateCheckBox.TabIndex = 44;
             this.chestplateCheckBox.Text = "Render Body Armor";
@@ -504,9 +482,9 @@
             // 
             this.unknownCheckBox.AutoSize = true;
             this.unknownCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.unknownCheckBox.Location = new System.Drawing.Point(359, 377);
+            this.unknownCheckBox.Location = new System.Drawing.Point(149, 372);
             this.unknownCheckBox.Name = "unknownCheckBox";
-            this.unknownCheckBox.Size = new System.Drawing.Size(84, 19);
+            this.unknownCheckBox.Size = new System.Drawing.Size(76, 21);
             this.unknownCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.unknownCheckBox.TabIndex = 61;
             this.unknownCheckBox.Text = "Unknown";
@@ -519,9 +497,9 @@
             // 
             this.crouchCheckBox.AutoSize = true;
             this.crouchCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.crouchCheckBox.Location = new System.Drawing.Point(359, 346);
+            this.crouchCheckBox.Location = new System.Drawing.Point(149, 341);
             this.crouchCheckBox.Name = "crouchCheckBox";
-            this.crouchCheckBox.Size = new System.Drawing.Size(137, 19);
+            this.crouchCheckBox.Size = new System.Drawing.Size(134, 21);
             this.crouchCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.crouchCheckBox.TabIndex = 60;
             this.crouchCheckBox.Text = "Backwards Crouch";
@@ -534,9 +512,9 @@
             // 
             this.dinnerboneCheckBox.AutoSize = true;
             this.dinnerboneCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.dinnerboneCheckBox.Location = new System.Drawing.Point(359, 315);
+            this.dinnerboneCheckBox.Location = new System.Drawing.Point(149, 310);
             this.dinnerboneCheckBox.Name = "dinnerboneCheckBox";
-            this.dinnerboneCheckBox.Size = new System.Drawing.Size(97, 19);
+            this.dinnerboneCheckBox.Size = new System.Drawing.Size(91, 21);
             this.dinnerboneCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.dinnerboneCheckBox.TabIndex = 59;
             this.dinnerboneCheckBox.Text = "Dinnerbone";
@@ -549,9 +527,9 @@
             // 
             this.noArmorCheckBox.AutoSize = true;
             this.noArmorCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.noArmorCheckBox.Location = new System.Drawing.Point(653, 377);
+            this.noArmorCheckBox.Location = new System.Drawing.Point(443, 372);
             this.noArmorCheckBox.Name = "noArmorCheckBox";
-            this.noArmorCheckBox.Size = new System.Drawing.Size(131, 19);
+            this.noArmorCheckBox.Size = new System.Drawing.Size(124, 21);
             this.noArmorCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.noArmorCheckBox.TabIndex = 58;
             this.noArmorCheckBox.Text = "Disable All Armor";
@@ -563,9 +541,9 @@
             // 
             this.bobbingCheckBox.AutoSize = true;
             this.bobbingCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.bobbingCheckBox.Location = new System.Drawing.Point(505, 346);
+            this.bobbingCheckBox.Location = new System.Drawing.Point(295, 341);
             this.bobbingCheckBox.Name = "bobbingCheckBox";
-            this.bobbingCheckBox.Size = new System.Drawing.Size(124, 19);
+            this.bobbingCheckBox.Size = new System.Drawing.Size(116, 21);
             this.bobbingCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.bobbingCheckBox.TabIndex = 57;
             this.bobbingCheckBox.Text = "Disable Bobbing";
@@ -577,9 +555,9 @@
             // 
             this.santaCheckBox.AutoSize = true;
             this.santaCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.santaCheckBox.Location = new System.Drawing.Point(653, 346);
+            this.santaCheckBox.Location = new System.Drawing.Point(443, 341);
             this.santaCheckBox.Name = "santaCheckBox";
-            this.santaCheckBox.Size = new System.Drawing.Size(86, 19);
+            this.santaCheckBox.Size = new System.Drawing.Size(86, 21);
             this.santaCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.santaCheckBox.TabIndex = 56;
             this.santaCheckBox.Text = "Bad Santa";
@@ -592,9 +570,9 @@
             // 
             this.syncLegsCheckBox.AutoSize = true;
             this.syncLegsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.syncLegsCheckBox.Location = new System.Drawing.Point(505, 315);
+            this.syncLegsCheckBox.Location = new System.Drawing.Point(295, 310);
             this.syncLegsCheckBox.Name = "syncLegsCheckBox";
-            this.syncLegsCheckBox.Size = new System.Drawing.Size(136, 19);
+            this.syncLegsCheckBox.Size = new System.Drawing.Size(133, 21);
             this.syncLegsCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.syncLegsCheckBox.TabIndex = 55;
             this.syncLegsCheckBox.Text = "Synchronous Legs";
@@ -606,9 +584,9 @@
             // 
             this.staticArmsCheckBox.AutoSize = true;
             this.staticArmsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.staticArmsCheckBox.Location = new System.Drawing.Point(239, 315);
+            this.staticArmsCheckBox.Location = new System.Drawing.Point(29, 310);
             this.staticArmsCheckBox.Name = "staticArmsCheckBox";
-            this.staticArmsCheckBox.Size = new System.Drawing.Size(94, 19);
+            this.staticArmsCheckBox.Size = new System.Drawing.Size(97, 21);
             this.staticArmsCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.staticArmsCheckBox.TabIndex = 54;
             this.staticArmsCheckBox.Text = "Static Arms";
@@ -620,9 +598,9 @@
             // 
             this.syncArmsCheckBox.AutoSize = true;
             this.syncArmsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.syncArmsCheckBox.Location = new System.Drawing.Point(653, 315);
+            this.syncArmsCheckBox.Location = new System.Drawing.Point(443, 310);
             this.syncArmsCheckBox.Name = "syncArmsCheckBox";
-            this.syncArmsCheckBox.Size = new System.Drawing.Size(140, 19);
+            this.syncArmsCheckBox.Size = new System.Drawing.Size(137, 21);
             this.syncArmsCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.syncArmsCheckBox.TabIndex = 53;
             this.syncArmsCheckBox.Text = "Synchronous Arms";
@@ -634,9 +612,9 @@
             // 
             this.statueCheckBox.AutoSize = true;
             this.statueCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.statueCheckBox.Location = new System.Drawing.Point(505, 377);
+            this.statueCheckBox.Location = new System.Drawing.Point(295, 372);
             this.statueCheckBox.Name = "statueCheckBox";
-            this.statueCheckBox.Size = new System.Drawing.Size(126, 19);
+            this.statueCheckBox.Size = new System.Drawing.Size(129, 21);
             this.statueCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.statueCheckBox.TabIndex = 52;
             this.statueCheckBox.Text = "Statue of Liberty";
@@ -649,9 +627,9 @@
             // 
             this.zombieCheckBox.AutoSize = true;
             this.zombieCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.zombieCheckBox.Location = new System.Drawing.Point(239, 377);
+            this.zombieCheckBox.Location = new System.Drawing.Point(29, 372);
             this.zombieCheckBox.Name = "zombieCheckBox";
-            this.zombieCheckBox.Size = new System.Drawing.Size(107, 19);
+            this.zombieCheckBox.Size = new System.Drawing.Size(101, 21);
             this.zombieCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.zombieCheckBox.TabIndex = 51;
             this.zombieCheckBox.Text = "Zombie Arms";
@@ -663,9 +641,9 @@
             // 
             this.staticLegsCheckBox.AutoSize = true;
             this.staticLegsCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.staticLegsCheckBox.Location = new System.Drawing.Point(239, 346);
+            this.staticLegsCheckBox.Location = new System.Drawing.Point(29, 341);
             this.staticLegsCheckBox.Name = "staticLegsCheckBox";
-            this.staticLegsCheckBox.Size = new System.Drawing.Size(90, 19);
+            this.staticLegsCheckBox.Size = new System.Drawing.Size(93, 21);
             this.staticLegsCheckBox.Style = MetroFramework.MetroColorStyle.Green;
             this.staticLegsCheckBox.TabIndex = 50;
             this.staticLegsCheckBox.Text = "Static Legs";
@@ -673,33 +651,69 @@
             this.toolTip.SetToolTip(this.staticLegsCheckBox, " These parts will not move in most animations. ");
             this.staticLegsCheckBox.UseSelectable = true;
             // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(617, 207);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(186, 23);
+            this.resetButton.TabIndex = 28;
+            this.resetButton.Text = "Restore ANIM";
+            this.resetButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.resetButton.UseSelectable = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // templateButton
+            // 
+            this.templateButton.Location = new System.Drawing.Point(617, 120);
+            this.templateButton.Name = "templateButton";
+            this.templateButton.Size = new System.Drawing.Size(186, 23);
+            this.templateButton.TabIndex = 29;
+            this.templateButton.Text = "Skin Presets";
+            this.templateButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.templateButton.UseSelectable = true;
+            this.templateButton.Click += new System.EventHandler(this.templateButton_Click);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(-3, -1);
+            this.panel1.Location = new System.Drawing.Point(-3, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 25);
+            this.panel1.Size = new System.Drawing.Size(836, 27);
             this.panel1.TabIndex = 62;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.Location = new System.Drawing.Point(6, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "ANIM Editor";
+            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
+            this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
+            this.label4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackgroundImage = global::PckStudio.Properties.Resources.Minimize;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(761, -1);
+            this.button3.Location = new System.Drawing.Point(733, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 26);
+            this.button3.Size = new System.Drawing.Size(51, 26);
             this.button3.TabIndex = 6;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -709,12 +723,13 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackgroundImage = global::PckStudio.Properties.Resources.Close;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(804, 0);
+            this.button1.Location = new System.Drawing.Point(782, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 26);
+            this.button1.Size = new System.Drawing.Size(51, 26);
             this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -724,7 +739,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(233, 290);
+            this.label1.Location = new System.Drawing.Point(23, 285);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 13);
             this.label1.TabIndex = 63;
@@ -735,7 +750,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(233, 47);
+            this.label2.Location = new System.Drawing.Point(23, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 64;
@@ -746,30 +761,17 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(625, 47);
+            this.label3.Location = new System.Drawing.Point(415, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 65;
             this.label3.Text = "Armor Flags";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(6, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ANIM Editor";
-            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
-            this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
-            this.label4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp_1);
-            // 
             // ANIMEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 415);
+            this.ClientSize = new System.Drawing.Size(830, 415);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -818,6 +820,7 @@
             this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "ANIMEditor";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.panel1.ResumeLayout(false);

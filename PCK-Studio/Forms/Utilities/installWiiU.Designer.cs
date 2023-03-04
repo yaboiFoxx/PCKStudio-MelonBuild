@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(installWiiU));
             this.metroTabPageMain = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabControlMain = new MetroFramework.Controls.MetroTabControl();
-            this.contextMenuStripCaffiine = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.replaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.replacePCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.close = new System.Windows.Forms.Button();
-            this.itwutoplable = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.myTablePanel1 = new PckStudio.Forms.MyTablePanel();
             this.buttonServerToggle = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,12 +44,20 @@
             this.listViewPCKS = new System.Windows.Forms.ListView();
             this.TextBoxPackImage = new MetroFramework.Controls.MetroTextBox();
             this.PackImageSelection = new System.Windows.Forms.Button();
+            this.metroTabControlMain = new MetroFramework.Controls.MetroTabControl();
+            this.contextMenuStripCaffiine = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.replaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.replacePCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.metroTabPageMain.SuspendLayout();
+            this.myTablePanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.metroTabControlMain.SuspendLayout();
             this.contextMenuStripCaffiine.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.myTablePanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabPageMain
@@ -73,74 +73,6 @@
             this.metroTabPageMain.VerticalScrollbarBarColor = true;
             this.metroTabPageMain.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPageMain.VerticalScrollbarSize = 10;
-            // 
-            // metroTabControlMain
-            // 
-            this.metroTabControlMain.Controls.Add(this.metroTabPageMain);
-            resources.ApplyResources(this.metroTabControlMain, "metroTabControlMain");
-            this.metroTabControlMain.Name = "metroTabControlMain";
-            this.metroTabControlMain.SelectedIndex = 0;
-            this.metroTabControlMain.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTabControlMain.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabControlMain.UseSelectable = true;
-            // 
-            // contextMenuStripCaffiine
-            // 
-            this.contextMenuStripCaffiine.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.replaceToolStripMenuItem,
-            this.replacePCKToolStripMenuItem});
-            this.contextMenuStripCaffiine.Name = "contextMenuStripCaffiine";
-            resources.ApplyResources(this.contextMenuStripCaffiine, "contextMenuStripCaffiine");
-            this.contextMenuStripCaffiine.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripCaffiine_Opening);
-            // 
-            // replaceToolStripMenuItem
-            // 
-            this.replaceToolStripMenuItem.Image = global::PckStudio.Properties.Resources.Replace;
-            this.replaceToolStripMenuItem.Name = "replaceToolStripMenuItem";
-            resources.ApplyResources(this.replaceToolStripMenuItem, "replaceToolStripMenuItem");
-            this.replaceToolStripMenuItem.Click += new System.EventHandler(this.replaceToolStripMenuItem_Click);
-            // 
-            // replacePCKToolStripMenuItem
-            // 
-            this.replacePCKToolStripMenuItem.Image = global::PckStudio.Properties.Resources.Replace;
-            this.replacePCKToolStripMenuItem.Name = "replacePCKToolStripMenuItem";
-            resources.ApplyResources(this.replacePCKToolStripMenuItem, "replacePCKToolStripMenuItem");
-            this.replacePCKToolStripMenuItem.Click += new System.EventHandler(this.replacePCKToolStripMenuItem_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.panel2.Controls.Add(this.close);
-            this.panel2.Controls.Add(this.itwutoplable);
-            this.panel2.Controls.Add(this.panel3);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
-            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
-            // 
-            // close
-            // 
-            resources.ApplyResources(this.close, "close");
-            this.close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.close.Image = global::PckStudio.Properties.Resources.wd_cl10;
-            this.close.Name = "close";
-            this.close.UseVisualStyleBackColor = true;
-            this.close.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // itwutoplable
-            // 
-            resources.ApplyResources(this.itwutoplable, "itwutoplable");
-            this.itwutoplable.BackColor = System.Drawing.Color.Transparent;
-            this.itwutoplable.ForeColor = System.Drawing.Color.Silver;
-            this.itwutoplable.Name = "itwutoplable";
-            this.itwutoplable.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel3
-            // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
             // 
             // myTablePanel1
             // 
@@ -179,7 +111,9 @@
             // radioButtonSystem
             // 
             resources.ApplyResources(this.radioButtonSystem, "radioButtonSystem");
-            this.radioButtonSystem.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonSystem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.radioButtonSystem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.radioButtonSystem.FlatAppearance.BorderSize = 2;
             this.radioButtonSystem.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal;
             this.radioButtonSystem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
             this.radioButtonSystem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -191,17 +125,22 @@
             // 
             // buttonSelect
             // 
+            this.buttonSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.buttonSelect.BackgroundImage = global::PckStudio.Properties.Resources.sdDownload;
             resources.ApplyResources(this.buttonSelect, "buttonSelect");
+            this.buttonSelect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.buttonSelect.FlatAppearance.BorderSize = 2;
             this.buttonSelect.ForeColor = System.Drawing.Color.White;
             this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.UseVisualStyleBackColor = false;
             this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
             // radioButtonUSB
             // 
             resources.ApplyResources(this.radioButtonUSB, "radioButtonUSB");
-            this.radioButtonUSB.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonUSB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.radioButtonUSB.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.radioButtonUSB.FlatAppearance.BorderSize = 2;
             this.radioButtonUSB.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal;
             this.radioButtonUSB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
             this.radioButtonUSB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -251,7 +190,9 @@
             // radioButtonEur
             // 
             resources.ApplyResources(this.radioButtonEur, "radioButtonEur");
-            this.radioButtonEur.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonEur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.radioButtonEur.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.radioButtonEur.FlatAppearance.BorderSize = 2;
             this.radioButtonEur.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal;
             this.radioButtonEur.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
             this.radioButtonEur.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -264,7 +205,9 @@
             // radioButtonUs
             // 
             resources.ApplyResources(this.radioButtonUs, "radioButtonUs");
-            this.radioButtonUs.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonUs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.radioButtonUs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.radioButtonUs.FlatAppearance.BorderSize = 2;
             this.radioButtonUs.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal;
             this.radioButtonUs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
             this.radioButtonUs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -277,7 +220,9 @@
             // radioButtonJap
             // 
             resources.ApplyResources(this.radioButtonJap, "radioButtonJap");
-            this.radioButtonJap.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonJap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.radioButtonJap.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.radioButtonJap.FlatAppearance.BorderSize = 2;
             this.radioButtonJap.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal;
             this.radioButtonJap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
             this.radioButtonJap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -291,10 +236,11 @@
             // 
             this.listViewPCKS.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.listViewPCKS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.listViewPCKS.BackgroundImage = global::PckStudio.Properties.Resources.MainSelection1;
+            this.listViewPCKS.BackgroundImage = global::PckStudio.Properties.Resources.wiiuinstaller_background;
             this.listViewPCKS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.myTablePanel1.SetColumnSpan(this.listViewPCKS, 3);
             resources.ApplyResources(this.listViewPCKS, "listViewPCKS");
+            this.listViewPCKS.ForeColor = System.Drawing.Color.Silver;
             this.listViewPCKS.HideSelection = false;
             this.listViewPCKS.Name = "listViewPCKS";
             this.listViewPCKS.UseCompatibleStateImageBehavior = false;
@@ -349,6 +295,80 @@
             this.PackImageSelection.UseVisualStyleBackColor = false;
             this.PackImageSelection.Click += new System.EventHandler(this.PackImageSelection_Click);
             // 
+            // metroTabControlMain
+            // 
+            this.metroTabControlMain.Controls.Add(this.metroTabPageMain);
+            resources.ApplyResources(this.metroTabControlMain, "metroTabControlMain");
+            this.metroTabControlMain.Name = "metroTabControlMain";
+            this.metroTabControlMain.SelectedIndex = 0;
+            this.metroTabControlMain.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTabControlMain.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabControlMain.UseSelectable = true;
+            // 
+            // contextMenuStripCaffiine
+            // 
+            this.contextMenuStripCaffiine.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.replaceToolStripMenuItem,
+            this.replacePCKToolStripMenuItem});
+            this.contextMenuStripCaffiine.Name = "contextMenuStripCaffiine";
+            resources.ApplyResources(this.contextMenuStripCaffiine, "contextMenuStripCaffiine");
+            this.contextMenuStripCaffiine.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripCaffiine_Opening);
+            // 
+            // replaceToolStripMenuItem
+            // 
+            this.replaceToolStripMenuItem.Image = global::PckStudio.Properties.Resources.Replace;
+            this.replaceToolStripMenuItem.Name = "replaceToolStripMenuItem";
+            resources.ApplyResources(this.replaceToolStripMenuItem, "replaceToolStripMenuItem");
+            this.replaceToolStripMenuItem.Click += new System.EventHandler(this.replaceToolStripMenuItem_Click);
+            // 
+            // replacePCKToolStripMenuItem
+            // 
+            this.replacePCKToolStripMenuItem.Image = global::PckStudio.Properties.Resources.Replace;
+            this.replacePCKToolStripMenuItem.Name = "replacePCKToolStripMenuItem";
+            resources.ApplyResources(this.replacePCKToolStripMenuItem, "replacePCKToolStripMenuItem");
+            this.replacePCKToolStripMenuItem.Click += new System.EventHandler(this.replacePCKToolStripMenuItem_Click);
+            // 
+            // panel2
+            // 
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Name = "panel2";
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown_1);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove_1);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp_1);
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.BackgroundImage = global::PckStudio.Properties.Resources.Minimize;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackgroundImage = global::PckStudio.Properties.Resources.Close;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Name = "label1";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown_1);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove_1);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp_1);
+            // 
             // installWiiU
             // 
             resources.ApplyResources(this, "$this");
@@ -360,16 +380,16 @@
             this.Name = "installWiiU";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
-            this.Style = MetroFramework.MetroColorStyle.White;
+            this.Style = MetroFramework.MetroColorStyle.Black;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabPageMain.ResumeLayout(false);
+            this.myTablePanel1.ResumeLayout(false);
+            this.myTablePanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.metroTabControlMain.ResumeLayout(false);
             this.contextMenuStripCaffiine.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.myTablePanel1.ResumeLayout(false);
-            this.myTablePanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -395,8 +415,8 @@
         private MetroFramework.Controls.MetroTextBox TextBoxPackImage;
         private System.Windows.Forms.Button PackImageSelection;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label itwutoplable;
-        private System.Windows.Forms.Button close;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -490,11 +490,11 @@ namespace PckStudio.Forms
             this.Close();
         }
 
-        // Drag panel
+        
         bool mousedown;
         private Point offset;
 
-        // Fr code for drag panel
+        
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (mousedown == true)
@@ -514,6 +514,37 @@ namespace PckStudio.Forms
             offset.X = e.X;
             offset.Y = e.Y;
             mousedown = true;
+        }
+
+        private void panel2_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mousedown = true;
+        }
+
+        private void panel2_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (mousedown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void panel2_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            mousedown = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
